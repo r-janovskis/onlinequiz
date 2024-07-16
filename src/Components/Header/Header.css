@@ -1,0 +1,13 @@
+header {
+  padding-top: 1rem;
+}
+
+header h1 {
+  font-family: "Poppins";
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+header p {
+  font-family: "Poppins";
+}
