@@ -5,7 +5,7 @@ function Rules(props) {
     <div>
       <h1>How to play</h1>
       <p>Some sample text in default font</p>
-      <button onClick={props.onGameChange}> Change State </button>
+      <button onClick={props.onStartGame}>Start Quiz</button>
     </div>
   );
 }

@@ -6,13 +6,16 @@ function Main(props) {
   if (props.isGameActive) {
     return (
       <main>
-        <Quiz onGameChange={props.onGameChange} />
+        <Quiz
+          onEndGame={props.onEndGame}
+          questionSequence={props.questionSequence}
+        />
       </main>
     );
   } else {
     return (
       <main>
-        <Rules onGameChange={props.onGameChange} />
+        <Rules onStartGame={props.onStartGame} />
       </main>
     );
   }

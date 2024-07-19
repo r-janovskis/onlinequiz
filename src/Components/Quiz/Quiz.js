@@ -4,7 +4,8 @@ function Quiz(props) {
   return (
     <div>
       <h1>Game Board</h1>
-      <button onClick={props.onGameChange}> Change State </button>
+      <p>{props.questionSequence.join(" ")}</p>
+      <button onClick={props.onEndGame}>Finish!</button>
     </div>
   );
 }
