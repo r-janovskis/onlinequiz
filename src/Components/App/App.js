@@ -10,9 +10,11 @@ function App() {
 
   const [questionSequence, setQuestionSequence] = useState([]);
 
+  const [questions, setQuestions] = useState([]);
+
   function startGame() {
-    const sequenceOfQuestions = Util.generateSequence();
-    setQuestionSequence(() => sequenceOfQuestions);
+    setQuestionSequence(() => Util.generateSequence());
+    setQuestions(() => Util.generateQuiz());
     setGameActive((prev) => (prev ? false : true));
   }
 
@@ -20,11 +22,10 @@ function App() {
     setGameActive((prev) => (prev ? false : true));
   }
 
-  /*
   useEffect(() => {
-    console.log(gameActive);
-  }, [gameActive]);
-  */
+    console.log(`Status questions updated: ${questions.length}`);
+    questions.forEach((element) => console.log(element.question));
+  }, [questions]);
 
   return (
     <div className="App">
