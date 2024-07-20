@@ -13,6 +13,7 @@ function Main(props) {
             index={props.index}
             numberOfQuestions={props.numberOfQuestions}
             question={props.question}
+            onAnswerQuestion={props.onAnswerQuestion}
           />
         </main>
       );

@@ -1,0 +1,28 @@
+.quizCard {
+  text-align: left;
+}
+
+.quizCard .btn {
+  color: white;
+  border: 2px solid white;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.correct,
+.correct:hover {
+  background-color: green;
+  opacity: 0.8;
+  color: white;
+  border: 2px solid green;
+  font-weight: 700;
+}
+
+.incorrect,
+.incorrect:hover {
+  background-color: red;
+  opacity: 0.8;
+  color: white;
+  border: 2px solid red;
+  font-weight: 700;
+}

@@ -23,11 +23,32 @@ function App() {
 
   function nextQuestion() {
     setIndex((prev) => prev + 1);
+    document.getElementById("nextButton").style.display = "none";
+    const answerButtons = document.getElementsByClassName("answerButton");
+    //console.log(answerButtons[0]);
+    for (let i = 0; i < answerButtons.length; i++) {
+      answerButtons[i].disabled = false;
+      answerButtons[i].classList.remove("correct", "incorrect");
+    }
   }
 
   function endGame() {
     setGameActive((prev) => (prev ? false : true));
   }
+
+  //const [questionAnswered, setQuestionAnswered] = useState(false);
+
+  function answerQuestion() {
+    //setQuestionAnswered((prev) => (prev ? false : true));
+    document.getElementById("nextButton").style.display = "block";
+
+    const answerButtons = document.getElementsByClassName("answerButton");
+    //console.log(answerButtons[0]);
+    for (let i = 0; i < answerButtons.length; i++) {
+      //answerButtons[i].disabled = true;
+    }
+  }
+
   /*
   useEffect(() => {
     console.log(`Status questions updated: ${questions.length}`);
@@ -45,6 +66,7 @@ function App() {
         index={index}
         numberOfQuestions={numberOfQuestions}
         question={questions[index]}
+        onAnswerQuestion={answerQuestion}
       />
     </div>
   );
