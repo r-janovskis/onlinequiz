@@ -11,7 +11,7 @@ const Util = {
     return sequence;
   },
 
-  generateQuiz(quizName = "disney") {
+  generateQuiz(numberOfQuestions, quizName = "disney") {
     let array = [];
     let questions = [];
     let allQuizQuestions = [];
@@ -24,8 +24,11 @@ const Util = {
         break;
     }
 
-    while (array.length < 10) {
-      array.push(Math.floor(Math.random() * allQuizQuestions.length));
+    while (array.length < numberOfQuestions) {
+      let index = Math.floor(Math.random() * allQuizQuestions.length);
+      if (array.indexOf(index) === -1) {
+        array.push(index);
+      }
     }
 
     let index = 0;
