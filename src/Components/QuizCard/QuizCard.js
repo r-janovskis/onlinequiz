@@ -1,6 +1,5 @@
 import React from "react";
 import "./QuizCard.css";
-import { type } from "@testing-library/user-event/dist/type";
 
 function QuizCard(props) {
   let correctAnswer;

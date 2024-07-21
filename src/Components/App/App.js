@@ -41,12 +41,6 @@ function App() {
   function answerQuestion() {
     //setQuestionAnswered((prev) => (prev ? false : true));
     document.getElementById("nextButton").style.display = "block";
-
-    const answerButtons = document.getElementsByClassName("answerButton");
-    //console.log(answerButtons[0]);
-    for (let i = 0; i < answerButtons.length; i++) {
-      //answerButtons[i].disabled = true;
-    }
   }
 
   /*

@@ -1,5 +1,6 @@
 import React from "react";
 import QuizCard from "../QuizCard/QuizCard";
+import "./Quiz.css";
 
 function Quiz(props) {
   return (
@@ -14,7 +15,7 @@ function Quiz(props) {
       </p>
       <button
         id="nextButton"
-        className="btn btn-primary btn-large"
+        className="btn btn-primary btn-lg"
         onClick={props.onNextQuestion}
       >
         Next
