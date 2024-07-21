@@ -10,8 +10,15 @@ function QuizCard(props) {
     console.log(buttonClicked.textContent);
     if (buttonClicked.textContent === correctAnswer) {
       buttonClicked.classList.add("correct");
+      document
+        .getElementsByClassName("answerCube")
+        [props.index].classList.add("correctCube");
+      props.onCorrectAnswer();
     } else {
       buttonClicked.classList.add("incorrect");
+      document
+        .getElementsByClassName("answerCube")
+        [props.index].classList.add("incorrectCube");
     }
 
     const answerButtons = document.getElementsByClassName("answerButton");
@@ -46,7 +53,7 @@ function QuizCard(props) {
           </button>
         );
       })}
-      <p>Correct answer: {correctAnswer}</p>
+      <p>Correct answer to this question: {correctAnswer}</p>
     </div>
   );
 }

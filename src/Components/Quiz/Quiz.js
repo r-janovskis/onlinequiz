@@ -9,6 +9,8 @@ function Quiz(props) {
       <QuizCard
         question={props.question}
         onAnswerQuestion={props.onAnswerQuestion}
+        onCorrectAnswer={props.onCorrectAnswer}
+        index={props.index}
       />
       <p>
         {props.index + 1}/{props.numberOfQuestions}

@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Util from "../../Util/Util";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [gameActive, setGameActive] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   const [index, setIndex] = useState(null);
 
   const [numberOfQuestions, setNumberOfQuestions] = useState(5);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
 
   function startGame() {
     //setQuestionSequence(() => Util.generateSequence());
@@ -34,6 +36,11 @@ function App() {
 
   function endGame() {
     setGameActive((prev) => (prev ? false : true));
+    setCorrectAnswers(0);
+  }
+
+  function updateCorrectAnswerCount() {
+    setCorrectAnswers((prev) => prev + 1);
   }
 
   //const [questionAnswered, setQuestionAnswered] = useState(false);
@@ -61,6 +68,14 @@ function App() {
         numberOfQuestions={numberOfQuestions}
         question={questions[index]}
         onAnswerQuestion={answerQuestion}
+        onCorrectAnswer={updateCorrectAnswerCount}
+        correctAnswersCount={correctAnswers}
+      />
+
+      <Footer
+        index={index}
+        numberOfQuestions={numberOfQuestions}
+        gameActive={gameActive}
       />
     </div>
   );

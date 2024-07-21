@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+footer p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  margin-left: 2rem;
+  text-align: center;
+  text-justify: center;
+}
+
+.answerCube {
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 2px solid blue;
+  margin: 0 0.5rem;
+}
+
+.correctCube {
+  background-color: green;
+}
+
+.incorrectCube {
+  background-color: red;
+}
