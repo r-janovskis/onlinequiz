@@ -12,10 +12,10 @@ function Footer(props) {
   if (props.gameActive && props.index < props.numberOfQuestions) {
     return (
       <footer>
-        {generateAnswerCubes()}
         <p>
           {props.index + 1}/{props.numberOfQuestions}
         </p>
+        <div className="progressBar">{generateAnswerCubes()}</div>
       </footer>
     );
   } else {

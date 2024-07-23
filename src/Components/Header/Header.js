@@ -6,7 +6,6 @@ function Header(props) {
   return (
     <header>
       <h1>The Amazing Online Quiz!</h1>
-      <img src={q_mark} alt="Rotating logo" />
     </header>
   );
 }

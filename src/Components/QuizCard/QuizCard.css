@@ -1,5 +1,7 @@
 .quizCard {
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .quizCard p {

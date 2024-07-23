@@ -37,7 +37,7 @@ function QuizCard(props) {
   }
 
   return (
-    <div className="d-grid gap-6 col-6 mx-auto quizCard">
+    <div className=" quizCard">
       <p className="question">{props.question.question}</p>
       {props.question.answers.map((answer, index) => {
         if (answer.correct === true) {
@@ -53,7 +53,6 @@ function QuizCard(props) {
           </button>
         );
       })}
-      <p>Correct answer to this question: {correctAnswer}</p>
     </div>
   );
 }

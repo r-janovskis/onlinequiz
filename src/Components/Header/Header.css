@@ -1,15 +1,13 @@
 header {
-  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
 }
 
 h1 {
   font-family: "Sevillana", "Times New Roman", Times, serif;
   font-weight: 700;
-
-  margin-bottom: 2rem;
 }
 
 header h1 {
@@ -33,5 +31,11 @@ header img {
 
   100% {
     transform: rotateY(360deg);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  header h1 {
+    font-size: 2rem;
   }
 }

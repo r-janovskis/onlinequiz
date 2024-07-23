@@ -13,7 +13,7 @@ function App() {
 
   const [index, setIndex] = useState(null);
 
-  const [numberOfQuestions, setNumberOfQuestions] = useState(3);
+  const [numberOfQuestions, setNumberOfQuestions] = useState(10);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
   function startGame(quizTopic) {

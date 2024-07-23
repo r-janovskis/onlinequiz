@@ -1,10 +1,4 @@
-main {
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
-}
-
-h1 {
+.container h1 {
   margin-top: 2rem;
 }
 
@@ -21,9 +15,16 @@ h1 {
   width: 50%;
   font-weight: 700;
   background-color: #382bf0;
-  margin-bottom: 2rem;
+  margin: 1rem auto;
 }
 
 .mainButton:hover {
   background-color: #7a5af5;
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
 }
