@@ -28,4 +28,8 @@
     width: 90%;
     margin-bottom: 1rem;
   }
+
+  .mainButton {
+    width: 70%;
+  }
 }
