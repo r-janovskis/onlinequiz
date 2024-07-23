@@ -4,7 +4,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
-  margin-top: 2rem;
 }
 
 .progressBar {
@@ -39,9 +38,15 @@ footer p {
   background-color: red;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
   .progressBar {
     width: 90%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .progressBar {
+    width: 70%;
     height: 4rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);

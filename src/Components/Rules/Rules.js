@@ -19,7 +19,7 @@ function Rules(props) {
         everyone. Let’s get quizzing! Don't forget to check us out time to time,
         since new quizes are on the way!
       </p>
-      <p>Instructions how to get best out of the Amazing Online Quiz:</p>
+      <p>How to get best out of the Amazing Online Quiz:</p>
       <ol>
         <li>
           Select a quiz topic by clicking one of the buttons. Each quiz has 10

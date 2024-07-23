@@ -1,14 +1,15 @@
-.container h1 {
-  margin-top: 2rem;
-}
-
 .container {
   min-width: 40%;
   min-height: 60%;
+  max-width: 90%;
   background-color: #46424f;
   border: 3px solid #382bf0;
   border-radius: 30px;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.container h1 {
+  margin-top: 1.5rem;
 }
 
 .mainButton {
