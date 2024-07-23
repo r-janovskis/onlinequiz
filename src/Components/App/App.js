@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 
 function App() {
   const [gameActive, setGameActive] = useState(false);
-
+  const [quizTopic, setQuizTopic] = useState("");
   const [questions, setQuestions] = useState([]);
 
   const [index, setIndex] = useState(null);
@@ -16,9 +16,10 @@ function App() {
   const [numberOfQuestions, setNumberOfQuestions] = useState(3);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  function startGame() {
+  function startGame(quizTopic) {
     //setQuestionSequence(() => Util.generateSequence());
-    setQuestions(() => Util.generateQuiz(numberOfQuestions));
+    setQuizTopic(quizTopic);
+    setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
     setGameActive((prev) => (prev ? false : true));
     setIndex(0);
   }
@@ -35,6 +36,7 @@ function App() {
   }
 
   function endGame() {
+    setQuizTopic("");
     setGameActive((prev) => (prev ? false : true));
     setCorrectAnswers(0);
   }
@@ -70,6 +72,7 @@ function App() {
         onAnswerQuestion={answerQuestion}
         onCorrectAnswer={updateCorrectAnswerCount}
         correctAnswersCount={correctAnswers}
+        quizTopic={quizTopic}
       />
 
       <Footer

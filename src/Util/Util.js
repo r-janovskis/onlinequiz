@@ -26,14 +26,17 @@ const Util = {
     return newAnswers;
   },
 
-  generateQuiz(numberOfQuestions, quizName = "disney") {
+  generateQuiz(numberOfQuestions, quizName) {
     let array = [];
     let questions = [];
     let allQuizQuestions = [];
 
     switch (quizName) {
-      case "disney":
+      case "Disney":
         allQuizQuestions = QuizQuestions.disney;
+        break;
+      case "Geography":
+        allQuizQuestions = QuizQuestions.geography;
         break;
       default:
         break;

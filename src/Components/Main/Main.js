@@ -16,6 +16,7 @@ function Main(props) {
             question={props.question}
             onAnswerQuestion={props.onAnswerQuestion}
             onCorrectAnswer={props.onCorrectAnswer}
+            quizTopic={props.quizTopic}
           />
         </main>
       );
@@ -26,6 +27,7 @@ function Main(props) {
             onEndGame={props.onEndGame}
             correctAnswersCount={props.correctAnswersCount}
             numberOfQuestions={props.numberOfQuestions}
+            quizTopic={props.quizTopic}
           />
         </main>
       );

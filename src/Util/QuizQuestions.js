@@ -546,6 +546,642 @@ const QuizQuestions = {
       ],
     },
   ],
+
+  geography: [
+    {
+      question: "What is the capital of Italy?",
+      answers: [
+        {
+          answer: "Venice",
+          correct: false,
+        },
+        {
+          answer: "Florence",
+          correct: false,
+        },
+        {
+          answer: "Rome",
+          correct: true,
+        },
+        {
+          answer: "Naples",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Which river flows through London? ",
+      answers: [
+        {
+          answer: "River Severn",
+          correct: false,
+        },
+        {
+          answer: "River Trent",
+          correct: false,
+        },
+        {
+          answer: "River Thames",
+          correct: true,
+        },
+        {
+          answer: "River Great Ouse",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "On which continent is the Sahara Desert located?",
+      answers: [
+        {
+          answer: "Asia",
+          correct: false,
+        },
+        {
+          answer: "South America",
+          correct: false,
+        },
+        {
+          answer: "Africa",
+          correct: true,
+        },
+        {
+          answer: "Europe",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How tall is Mount Everest?",
+      answers: [
+        {
+          answer: "6,849 m",
+          correct: false,
+        },
+        {
+          answer: "7,849 m",
+          correct: false,
+        },
+        {
+          answer: "8,849 m",
+          correct: true,
+        },
+        {
+          answer: "9,849 m",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "In which US state can you find the city of Chicago? ",
+      answers: [
+        {
+          answer: "Mississippi",
+          correct: false,
+        },
+        {
+          answer: "Missouri",
+          correct: false,
+        },
+        {
+          answer: "Illinois",
+          correct: true,
+        },
+        {
+          answer: "Arizona",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "What is the capital of the United Arab Emirates?",
+      answers: [
+        {
+          answer: "Dubai",
+          correct: false,
+        },
+        {
+          answer: "Abu Dhabi",
+          correct: true,
+        },
+        {
+          answer: "Sharjah",
+          correct: false,
+        },
+        {
+          answer: "Ajman",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "What is the southernmost capital city in the world? ",
+      answers: [
+        {
+          answer: "Canberra",
+          correct: false,
+        },
+        {
+          answer: "Buenos Aires",
+          correct: false,
+        },
+        {
+          answer: "Jakarta",
+          correct: false,
+        },
+        {
+          answer: "Wellington",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What is the smallest country in the world?",
+      answers: [
+        {
+          answer: "Andorra",
+          correct: false,
+        },
+        {
+          answer: "Luxembourg",
+          correct: false,
+        },
+        {
+          answer: "Vatican City",
+          correct: true,
+        },
+        {
+          answer: "Belgium",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question:
+        "In which country is located the volcano Eyjafjallajökull which stopped air traffic for days in 2010? ",
+      answers: [
+        {
+          answer: "Greenland",
+          correct: false,
+        },
+        {
+          answer: "Italy",
+          correct: false,
+        },
+        {
+          answer: "Indonesia",
+          correct: false,
+        },
+        {
+          answer: "Iceland",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What is the highest mountain in Scotland?",
+      answers: [
+        {
+          answer: "Ben Macdui",
+          correct: false,
+        },
+        {
+          answer: "Braeriach",
+          correct: false,
+        },
+        {
+          answer: "Ben Nevis",
+          correct: true,
+        },
+        {
+          answer: "Cairn Toul",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "What is the largest canyon in the world?",
+      answers: [
+        {
+          answer: "Verdon Groge",
+          correct: false,
+        },
+        {
+          answer: "Fish River Canyon",
+          correct: false,
+        },
+        {
+          answer: "Colca Canyon",
+          correct: false,
+        },
+        {
+          answer: "Grand Canyon",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "How many countries are there in the world?",
+      answers: [
+        {
+          answer: "105",
+          correct: false,
+        },
+        {
+          answer: "145",
+          correct: false,
+        },
+        {
+          answer: "195",
+          correct: true,
+        },
+        {
+          answer: "245",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Which one of the following countries is further North? ",
+      answers: [
+        {
+          answer: "Scotland",
+          correct: true,
+        },
+        {
+          answer: "The Netherlands",
+          correct: false,
+        },
+        {
+          answer: "Belgium",
+          correct: false,
+        },
+        {
+          answer: "Poland",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "In which Mountain range can you find the Mont Blanc?",
+      answers: [
+        {
+          answer: "The Pyrenees",
+          correct: false,
+        },
+        {
+          answer: "Carpathian Mountains",
+          correct: false,
+        },
+        {
+          answer: "Caucasus Mountains",
+          correct: false,
+        },
+        {
+          answer: "The Alps",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What is the longest river in the world?",
+      answers: [
+        {
+          answer: "Amazon River",
+          correct: false,
+        },
+        {
+          answer: "Yangtze River",
+          correct: false,
+        },
+        {
+          answer: "The Nile",
+          correct: true,
+        },
+        {
+          answer: "Yellow River",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Which country is not located on the Golden Triangle?",
+      answers: [
+        {
+          answer: "Thailand",
+          correct: false,
+        },
+        {
+          answer: "Laos",
+          correct: false,
+        },
+        {
+          answer: "Myanmar",
+          correct: false,
+        },
+        {
+          answer: "China",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What is the highest mountain in Japan?",
+      answers: [
+        {
+          answer: "Mount Kita",
+          correct: false,
+        },
+        {
+          answer: "Mount Fuji",
+          correct: true,
+        },
+        {
+          answer: "Mount Okuhotaka",
+          correct: false,
+        },
+        {
+          answer: "Mount Aino",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "In which country is Mount Kilimanjaro?",
+      answers: [
+        {
+          answer: "Kenya",
+          correct: false,
+        },
+        {
+          answer: "Congo",
+          correct: false,
+        },
+        {
+          answer: "Nigeria",
+          correct: false,
+        },
+        {
+          answer: "Tanzania",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Which European city is not located on the Danube?",
+      answers: [
+        {
+          answer: "Budapest",
+          correct: false,
+        },
+        {
+          answer: "Vienna",
+          correct: false,
+        },
+        {
+          answer: "Belgrade",
+          correct: false,
+        },
+        {
+          answer: "Prague",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What type of geographical landmark is K2?",
+      answers: [
+        {
+          answer: "A waterfall",
+          correct: false,
+        },
+        {
+          answer: "A river",
+          correct: false,
+        },
+        {
+          answer: "A mountain",
+          correct: true,
+        },
+        {
+          answer: "A beach",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How long is the border between Canada and the USA?",
+      answers: [
+        {
+          answer: "5,891 km",
+          correct: false,
+        },
+        {
+          answer: "6,891 km",
+          correct: false,
+        },
+        {
+          answer: "7,891 km",
+          correct: false,
+        },
+        {
+          answer: "8,891 km",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question:
+        "What percentage of the world population lives in the Northern Hemisphere?",
+      answers: [
+        {
+          answer: "57%",
+          correct: false,
+        },
+        {
+          answer: "67%",
+          correct: false,
+        },
+        {
+          answer: "77%",
+          correct: false,
+        },
+        {
+          answer: "87%",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Which one of the following countries is not an enclave?",
+      answers: [
+        {
+          answer: "Vatican",
+          correct: false,
+        },
+        {
+          answer: "Italy",
+          correct: true,
+        },
+        {
+          answer: "San Marino",
+          correct: false,
+        },
+        {
+          answer: "Lesotho",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question:
+        "In which Australian archipelago can you find Whitehaven Beach?",
+      answers: [
+        {
+          answer: "Whitsunday Islands",
+          correct: true,
+        },
+        {
+          answer: "Lamy Islands",
+          correct: false,
+        },
+        {
+          answer: "Buccaneer Islands",
+          correct: false,
+        },
+        {
+          answer: "Bonaparte Islands",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "What is the distance from London to Los Angeles?",
+      answers: [
+        {
+          answer: "4,437 miles",
+          correct: false,
+        },
+        {
+          answer: "5,437 miles",
+          correct: true,
+        },
+        {
+          answer: "6,437 miles",
+          correct: false,
+        },
+        {
+          answer: "7,437 miles",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How many countries does China share a border with?",
+      answers: [
+        {
+          answer: "7",
+          correct: false,
+        },
+        {
+          answer: "10",
+          correct: false,
+        },
+        {
+          answer: "14",
+          correct: true,
+        },
+        {
+          answer: "19",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How many islands are there in Sweden?",
+      answers: [
+        {
+          answer: "7,570",
+          correct: false,
+        },
+        {
+          answer: "67,570",
+          correct: false,
+        },
+        {
+          answer: "167,570",
+          correct: false,
+        },
+        {
+          answer: "267,570",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "What was the lowest temperature ever recorded on the Earth?",
+      answers: [
+        {
+          answer: "-59.2°C",
+          correct: false,
+        },
+        {
+          answer: "-69.2°C",
+          correct: false,
+        },
+        {
+          answer: "-79.2°C",
+          correct: false,
+        },
+        {
+          answer: "-89.2°C",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "How many time zones have France?",
+      answers: [
+        {
+          answer: "1",
+          correct: false,
+        },
+        {
+          answer: "2",
+          correct: false,
+        },
+        {
+          answer: "6",
+          correct: false,
+        },
+        {
+          answer: "12",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Which country is not home to Lake Victoria?",
+      answers: [
+        {
+          answer: "Uganda",
+          correct: false,
+        },
+        {
+          answer: "Tanzania",
+          correct: false,
+        },
+        {
+          answer: "Rwanda",
+          correct: true,
+        },
+        {
+          answer: "Kenya",
+          correct: false,
+        },
+      ],
+    },
+  ],
 };
 
 export default QuizQuestions;

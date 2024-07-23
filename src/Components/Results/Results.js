@@ -4,7 +4,7 @@ import "./Results.css";
 function Results(props) {
   return (
     <div className="container">
-      <h1>Results</h1>
+      <h1>Results of {props.quizTopic} Quiz</h1>
       <p>
         You got {props.correctAnswersCount} correct answers out of{" "}
         {props.numberOfQuestions}

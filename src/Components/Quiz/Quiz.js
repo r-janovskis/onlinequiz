@@ -5,7 +5,7 @@ import "./Quiz.css";
 function Quiz(props) {
   return (
     <div className="container">
-      <h1>Game Board</h1>
+      <h1>{props.quizTopic} Quiz</h1>
       <QuizCard
         question={props.question}
         onAnswerQuestion={props.onAnswerQuestion}
