@@ -4,7 +4,7 @@ import "./Quiz.css";
 
 function Quiz(props) {
   return (
-    <div>
+    <div className="container">
       <h1>Game Board</h1>
       <QuizCard
         question={props.question}
@@ -12,12 +12,9 @@ function Quiz(props) {
         onCorrectAnswer={props.onCorrectAnswer}
         index={props.index}
       />
-      <p>
-        {props.index + 1}/{props.numberOfQuestions}
-      </p>
       <button
         id="nextButton"
-        className="btn btn-primary btn-lg"
+        className="btn btn-lg mainButton"
         onClick={props.onNextQuestion}
       >
         Next

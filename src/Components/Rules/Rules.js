@@ -2,10 +2,12 @@ import React from "react";
 
 function Rules(props) {
   return (
-    <div>
+    <div className="container">
       <h1>How to play</h1>
       <p>Some sample text in default font</p>
-      <button onClick={props.onStartGame}>Start Quiz</button>
+      <button className="btn btn-lg mainButton" onClick={props.onStartGame}>
+        Start Quiz
+      </button>
     </div>
   );
 }
