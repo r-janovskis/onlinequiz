@@ -7,8 +7,14 @@ import Util from "../../Util/Util";
 import Footer from "../Footer/Footer";
 
 function App() {
-  const [gameActive, setGameActive] = useState(false);
-  const [quizTopic, setQuizTopic] = useState("");
+  /*
+  We will use game Statuses:
+  - active -> quiz is being played
+  - preparation -> start screen where rules are isplayed and we chose which game we play
+  - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
+  */
+  const [gameStatus, setGameStatus] = useState(false);
+  const [quizTopic, setQuizTopic] = useState("preparation");
   const [questions, setQuestions] = useState([]);
 
   const [index, setIndex] = useState(null);
@@ -20,7 +26,7 @@ function App() {
     //setQuestionSequence(() => Util.generateSequence());
     setQuizTopic(quizTopic);
     setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
-    setGameActive((prev) => (prev ? false : true));
+    setGameStatus("active");
     setIndex(0);
   }
 
@@ -36,8 +42,14 @@ function App() {
   }
 
   function endGame() {
+    //setQuizTopic("");
+    setGameStatus("finished");
+    //setCorrectAnswers(0);
+  }
+
+  function backToStart() {
     setQuizTopic("");
-    setGameActive((prev) => (prev ? false : true));
+    setGameStatus("preparation");
     setCorrectAnswers(0);
   }
 
@@ -62,23 +74,25 @@ function App() {
     <div className="App">
       <Header />
       <Main
-        isGameActive={gameActive}
+        gameStatus={gameStatus}
         onStartGame={startGame}
         onNextQuestion={nextQuestion}
         onEndGame={endGame}
         index={index}
         numberOfQuestions={numberOfQuestions}
         question={questions[index]}
+        allQuestions={questions}
         onAnswerQuestion={answerQuestion}
         onCorrectAnswer={updateCorrectAnswerCount}
         correctAnswersCount={correctAnswers}
         quizTopic={quizTopic}
+        noBackToStart={backToStart}
       />
 
       <Footer
         index={index}
         numberOfQuestions={numberOfQuestions}
-        gameActive={gameActive}
+        gameStatus={gameStatus}
       />
     </div>
   );

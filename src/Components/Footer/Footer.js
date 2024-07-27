@@ -5,11 +5,13 @@ function Footer(props) {
   const generateAnswerCubes = () => {
     let answerCubesArray = [];
     for (let i = 0; i < props.numberOfQuestions; i++) {
-      answerCubesArray.push(<div className="answerCube"></div>);
+      answerCubesArray.push(
+        <div className="answerCube" key={`answerCube${i}`}></div>
+      );
     }
     return answerCubesArray;
   };
-  if (props.gameActive && props.index < props.numberOfQuestions) {
+  if (props.gameStatus === "active") {
     return (
       <footer>
         <p>
@@ -18,7 +20,6 @@ function Footer(props) {
         <div className="progressBar">{generateAnswerCubes()}</div>
       </footer>
     );
-  } else {
     return null;
   }
 }

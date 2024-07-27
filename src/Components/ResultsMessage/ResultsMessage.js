@@ -5,7 +5,7 @@ function ResultsMessage(props) {
   if (props.correctAnswersCount === props.numberOfQuestions) {
     return (
       <article>
-        <h2>Unbelievable, you're a guru!</h2>
+        <h2 className="section-header">Unbelievable, you're a guru!</h2>
         <p className="strong">
           Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
         </p>

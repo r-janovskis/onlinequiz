@@ -16,7 +16,7 @@ function Quiz(props) {
         <button
           id="nextButton"
           className="btn btn-lg mainButton"
-          onClick={props.onNextQuestion}
+          onClick={props.onEndGame}
         >
           Finish Quiz
         </button>

@@ -7,7 +7,7 @@ function QuizCard(props) {
   function handleClick(event) {
     const buttonClicked = event.target;
     //console.log(typeof event.target);
-    console.log(buttonClicked.textContent);
+    //console.log(buttonClicked.textContent);
     if (buttonClicked.textContent === correctAnswer) {
       buttonClicked.classList.add("correct");
       document
