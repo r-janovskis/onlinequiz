@@ -62,6 +62,13 @@ function Rules(props) {
         >
           Disney Quiz
         </button>
+        <button
+          className="btn btn-lg mainButton"
+          value="Sports"
+          onClick={startGame}
+        >
+          Sports Quiz
+        </button>
       </div>
     </div>
   );

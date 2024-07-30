@@ -23,14 +23,14 @@
 .correct:hover {
   background-color: green;
   opacity: 0.8;
-  border: 2px solid green;
   font-weight: 700;
+  pointer-events: none;
 }
 
 .incorrect,
 .incorrect:hover {
   background-color: red;
   opacity: 0.8;
-  border: 2px solid red;
   font-weight: 700;
+  pointer-events: none;
 }

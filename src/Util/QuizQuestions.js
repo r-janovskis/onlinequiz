@@ -1182,6 +1182,562 @@ const QuizQuestions = {
       ],
     },
   ],
+  sports: [
+    {
+      question: "How many masters tournaments did Tiger Woods win?",
+      answers: [
+        {
+          answer: "3",
+          correct: false,
+        },
+        {
+          answer: "4",
+          correct: false,
+        },
+        {
+          answer: "5",
+          correct: true,
+        },
+        {
+          answer: "6",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "In which country does the Masters Tournament take place?",
+      answers: [
+        {
+          answer: "Scotland",
+          correct: false,
+        },
+        {
+          answer: "Australia",
+          correct: false,
+        },
+        {
+          answer: "India",
+          correct: false,
+        },
+        {
+          answer: "United States",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "During which Winter Olympics did the Miracle of Ice happen?",
+      answers: [
+        {
+          answer: "1970",
+          correct: false,
+        },
+        {
+          answer: "1980",
+          correct: true,
+        },
+        {
+          answer: "1990",
+          correct: false,
+        },
+        {
+          answer: "2000",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How long is the Kentucky Derby race?",
+      answers: [
+        {
+          answer: "0.75 mile",
+          correct: false,
+        },
+        {
+          answer: "1 mile",
+          correct: false,
+        },
+        {
+          answer: "1.25 mile",
+          correct: true,
+        },
+        {
+          answer: "1.5 mile",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "In which country did the 2023 Rugby World Cup take place?",
+      answers: [
+        {
+          answer: "New Zealand",
+          correct: false,
+        },
+        {
+          answer: "South Africa",
+          correct: false,
+        },
+        {
+          answer: "France",
+          correct: true,
+        },
+        {
+          answer: "England",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question:
+        "How long was the 2008 Wimbledon final between Federer and Nadal?",
+      answers: [
+        {
+          answer: "2 hours 48 minutes",
+          correct: false,
+        },
+        {
+          answer: "3 hours 48 minutes",
+          correct: false,
+        },
+        {
+          answer: "4 hours 48 minutes",
+          correct: true,
+        },
+        {
+          answer: "5 hours 48 minutes",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "What sport is not part of a triathlon? ",
+      answers: [
+        {
+          answer: "Running",
+          correct: false,
+        },
+        {
+          answer: "Swimming",
+          correct: false,
+        },
+        {
+          answer: "Cycling",
+          correct: false,
+        },
+        {
+          answer: "Archery",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Who is the most decorated Olympian in history?",
+      answers: [
+        {
+          answer: "Jesse Owens",
+          correct: false,
+        },
+        {
+          answer: "Mark Spitz",
+          correct: false,
+        },
+        {
+          answer: "Michael Phelps",
+          correct: true,
+        },
+        {
+          answer: "Usain Bolt",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "As of 2023, how many London marathons has David Weir won?",
+      answers: [
+        {
+          answer: "6",
+          correct: false,
+        },
+        {
+          answer: "7",
+          correct: false,
+        },
+        {
+          answer: "8",
+          correct: true,
+        },
+        {
+          answer: "9",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Which football team was in the Munich air disaster in 1958?",
+      answers: [
+        {
+          answer: "Chelsea",
+          correct: false,
+        },
+        {
+          answer: "Manchester United",
+          correct: true,
+        },
+        {
+          answer: "Liverpool FC",
+          correct: false,
+        },
+        {
+          answer: "Tottenham Hotspur",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Taekwondo is an Olympic sport.",
+      answers: [
+        {
+          answer: "True",
+          correct: true,
+        },
+        {
+          answer: "False",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Sumo wrestling is a popular sport in China.",
+      answers: [
+        {
+          answer: "True",
+          correct: false,
+        },
+        {
+          answer: "False",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Venus Williams won more single titles than Serena.",
+      answers: [
+        {
+          answer: "True",
+          correct: false,
+        },
+        {
+          answer: "False",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Simone Biles is a famous American gymnast.",
+      answers: [
+        {
+          answer: "True",
+          correct: true,
+        },
+        {
+          answer: "False",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Arnold Schwarzenegger was a professional bodybuilder.",
+      answers: [
+        {
+          answer: "True",
+          correct: true,
+        },
+        {
+          answer: "False",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Team UK is the brand name used for the British Olympic team.",
+      answers: [
+        {
+          answer: "True",
+          correct: false,
+        },
+        {
+          answer: "False",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Canoeing and kayaking are the same thing.",
+      answers: [
+        {
+          answer: "True",
+          correct: false,
+        },
+        {
+          answer: "False",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Drivers have to do 500 laps during the Daytona 500 race.",
+      answers: [
+        {
+          answer: "True",
+          correct: false,
+        },
+        {
+          answer: "False",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Bobby Moore was the captain of the English football team when they won the world cup in 1966.",
+      answers: [
+        {
+          answer: "True",
+          correct: true,
+        },
+        {
+          answer: "False",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Ellie Simmonds is a Paralympian.",
+      answers: [
+        {
+          answer: "True",
+          correct: true,
+        },
+        {
+          answer: "False",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "How many players are there in a football (soccer) team?",
+      answers: [
+        {
+          answer: "7",
+          correct: false,
+        },
+        {
+          answer: "9",
+          correct: false,
+        },
+        {
+          answer: "11",
+          correct: true,
+        },
+        {
+          answer: "13",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Which sport is not played with a ball?",
+      answers: [
+        {
+          answer: "Baseball",
+          correct: false,
+        },
+        {
+          answer: "Soccer",
+          correct: false,
+        },
+        {
+          answer: "Basketball",
+          correct: false,
+        },
+        {
+          answer: "Ice hockey",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "With which team did Michael Jordan win 6 titles?",
+      answers: [
+        {
+          answer: "Brooklyn Nets",
+          correct: false,
+        },
+        {
+          answer: "Phoenix Suns",
+          correct: false,
+        },
+        {
+          answer: "Los Angeles Lakers",
+          correct: false,
+        },
+        {
+          answer: "Chicago Bulls",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "When is the Super Bowl?",
+      answers: [
+        {
+          answer: "First Sunday in February",
+          correct: true,
+        },
+        {
+          answer: "Second Sunday in February",
+          correct: false,
+        },
+        {
+          answer: "First Sunday in March",
+          correct: false,
+        },
+        {
+          answer: "Last Sunday in January",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question: "Where were the 2012 Summer Olympics held?",
+      answers: [
+        {
+          answer: "Paris, France",
+          correct: false,
+        },
+        {
+          answer: "Barcelona, Spain",
+          correct: false,
+        },
+        {
+          answer: "Sydney, Australia",
+          correct: false,
+        },
+        {
+          answer: "London, UK",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "In which US State does the Daytona 500 race take place?",
+      answers: [
+        {
+          answer: "Ohio",
+          correct: false,
+        },
+        {
+          answer: "Florida",
+          correct: true,
+        },
+        {
+          answer: "California",
+          correct: false,
+        },
+        {
+          answer: "Oregon",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Which fruit is eaten with cream during the Wimbledon Tournament?",
+      answers: [
+        {
+          answer: "Pineapple",
+          correct: false,
+        },
+        {
+          answer: "Pear",
+          correct: false,
+        },
+        {
+          answer: "Apple",
+          correct: false,
+        },
+        {
+          answer: "Strawberry",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "How many players are there in a cricket team?",
+      answers: [
+        {
+          answer: "5",
+          correct: false,
+        },
+        {
+          answer: "7",
+          correct: false,
+        },
+        {
+          answer: "9",
+          correct: false,
+        },
+        {
+          answer: "11",
+          correct: true,
+        },
+      ],
+    },
+    {
+      question: "Where is Andy Murray from?",
+      answers: [
+        {
+          answer: "England",
+          correct: false,
+        },
+        {
+          answer: "Wales",
+          correct: false,
+        },
+        {
+          answer: "Scotland",
+          correct: true,
+        },
+        {
+          answer: "Northern Ireland",
+          correct: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Who was the first gymnast to be awarded a perfect score of 10.0 at the Olympic Games?",
+      answers: [
+        {
+          answer: "Nadia Comăneci",
+          correct: true,
+        },
+        {
+          answer: "Simone Biles",
+          correct: false,
+        },
+        {
+          answer: "Gabby Douglas",
+          correct: false,
+        },
+        {
+          answer: "Olga Korbut",
+          correct: false,
+        },
+      ],
+    },
+  ],
 };
 
 export default QuizQuestions;

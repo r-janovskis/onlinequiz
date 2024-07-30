@@ -38,6 +38,9 @@ const Util = {
       case "Geography":
         allQuizQuestions = QuizQuestions.geography;
         break;
+      case "Sports":
+        allQuizQuestions = QuizQuestions.sports;
+        break;
       default:
         break;
     }

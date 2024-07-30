@@ -16,6 +16,7 @@ function Results(props) {
       </button>
       <h2 className="section-header">Correct answers</h2>
       <QuizAnswers allQuestions={props.allQuestions} />
+      <a href="#top">Back to Top</a>
     </div>
   );
 }
