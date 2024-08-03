@@ -12,6 +12,8 @@ h1 {
 
 header h1 {
   font-size: 3.5rem;
+  color: white;
+  font-weight: 900;
 }
 
 @keyframes rotateY-anim {

@@ -13,8 +13,8 @@ function App() {
   - preparation -> start screen where rules are isplayed and we chose which game we play
   - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
   */
-  const [gameStatus, setGameStatus] = useState(false);
-  const [quizTopic, setQuizTopic] = useState("preparation");
+  const [gameStatus, setGameStatus] = useState("preparation");
+  const [quizTopic, setQuizTopic] = useState("");
   const [questions, setQuestions] = useState([]);
 
   const [index, setIndex] = useState(null);
@@ -64,12 +64,35 @@ function App() {
     document.getElementById("nextButton").style.display = "block";
   }
 
-  /*
   useEffect(() => {
-    console.log(`Status questions updated: ${questions.length}`);
-    questions.forEach((element) => console.log(element.question));
-  }, [questions]);
-*/
+    if (gameStatus === "active") {
+      document.getElementsByClassName("container")[0].style.marginBottom =
+        "1rem";
+    } else {
+      document.getElementsByClassName("container")[0].style.marginBottom =
+        "5rem";
+    }
+
+    const root = document.getElementById("root");
+    switch (gameStatus) {
+      case "active":
+        root.style.backgroundImage = "url(./class.jpg)";
+        document.getElementsByClassName("container")[0].style.marginBottom =
+          "1rem";
+        break;
+      case "finished":
+        root.style.backgroundImage = "url(./wooden-wall.jpg)";
+        document.getElementsByClassName("container")[0].style.marginBottom =
+          "5rem";
+        break;
+      default:
+        root.style.backgroundImage = "url(./disney.jpg)";
+        document.getElementsByClassName("container")[0].style.marginBottom =
+          "5rem";
+        break;
+    }
+  }, [gameStatus, quizTopic]);
+
   return (
     <div className="App">
       <Header />
