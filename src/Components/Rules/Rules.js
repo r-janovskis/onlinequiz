@@ -19,33 +19,28 @@ function Rules(props) {
         everyone. Let’s get quizzing! Don't forget to check us out time to time,
         since new quizes are on the way!
       </p>
-      <p>How to get best out of the Amazing Online Quiz:</p>
+      <p>How to play the Amazing Online Quiz:</p>
       <ol>
         <li>
-          Select a quiz topic by clicking one of the buttons. Each quiz has 10
-          questions.
+          To start a game, select a topic by clicking one of the buttons below.
+          questions. Each quiz will contain 10 questions.
         </li>
         <li>
-          You will be presented by a question and your task is to find the
-          correct answer.
+          Questions will be presented one by one with no chance to go back to
+          change your answer, so consider your answer carefully. When you have
+          picked an answer you think is correct just click on it.
         </li>
         <li>
-          When you have figured out which answer is correct, just click on it
-          and we will register your choice.
+          When you have picked an answer we will let you know if it was correct
+          (green) or not (red).
         </li>
+        <li>To continue to the next question click on 'Next Question'.</li>
+
         <li>
-          Your answer will be evaluated straight away abd you will see if you
-          have selected correctly (it will turn green) or you missed (red color)
+          After you have completed all 10 questions we will present you with a
+          summary and a chance to see correct answers to all questions.
         </li>
-        <li>
-          After you have answered the question press button 'Next Question' to
-          go to the next question
-        </li>
-        <li>
-          After the last question you will be presented with an overall summary
-          and score to see how well you did.
-        </li>
-        <li>Good luck & have fun!</li>
+        <li>Best of luck & have fun!</li>
       </ol>
       <div className="quizChoices">
         <button
