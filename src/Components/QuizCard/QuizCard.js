@@ -37,7 +37,7 @@ function QuizCard(props) {
   }
 
   return (
-    <div className=" quizCard">
+    <article className=" quizCard">
       <p className="question">{props.question.question}</p>
       {props.question.answers.map((answer, index) => {
         if (answer.correct === true) {
@@ -53,7 +53,7 @@ function QuizCard(props) {
           </button>
         );
       })}
-    </div>
+    </article>
   );
 }
 

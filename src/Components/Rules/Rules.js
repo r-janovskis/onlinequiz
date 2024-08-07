@@ -7,10 +7,10 @@ function Rules(props) {
   };
 
   return (
-    <div className="container">
+    <article className="container">
       <h1>How to play</h1>
       <p className="intro">
-        Welcome to Amazing Online Quiz! <br />
+        <strong>Welcome to Amazing Online Quiz!</strong> <br />
         Ready to test your knowledge and have some fun? Dive into our exciting
         quizzes covering some specific topics, from pop culture to science,
         history, and more. Challenge yourself, compete with friends, and see how
@@ -42,7 +42,7 @@ function Rules(props) {
         </li>
         <li>Best of luck & have fun!</li>
       </ol>
-      <div className="quizChoices">
+      <section className="quizChoices">
         <button
           className="btn btn-lg mainButton"
           value="Geography"
@@ -64,8 +64,8 @@ function Rules(props) {
         >
           Sports Quiz
         </button>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 }
 

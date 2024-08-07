@@ -27,7 +27,6 @@ const Util = {
   },
 
   generateQuiz(numberOfQuestions, quizName) {
-    let array = [];
     let questions = [];
     let allQuizQuestions = [];
 
@@ -45,16 +44,22 @@ const Util = {
         break;
     }
 
+    let randomQuestionSequence = this.generateSequence(allQuizQuestions.length);
+    /*
     while (array.length < numberOfQuestions) {
       let index = Math.floor(Math.random() * allQuizQuestions.length);
       if (array.indexOf(index) === -1) {
         array.push(index);
       }
     }
+    */
 
     let index = 0;
-    while (array.length > index) {
-      questions.push(allQuizQuestions[array[index]]);
+    while (
+      questions.length < numberOfQuestions &&
+      randomQuestionSequence.length > 0
+    ) {
+      questions.push(allQuizQuestions[randomQuestionSequence.shift()]);
 
       //randomize answers
       let sequenceOfAnswers = this.generateSequence(
