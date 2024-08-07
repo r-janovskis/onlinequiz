@@ -10,8 +10,8 @@ function ResultsMessage(props) {
           Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
         </p>
         <p>
-          You have a flawless knowledge about the topic! Now you can brag about
-          it to all of your friends!
+          You have a flawless knowledge about the topic! Now you can cofidently
+          brag about it to your friends!
         </p>
         <p>
           If you would like to test your knowledge in other Amazing Online
@@ -22,7 +22,7 @@ function ResultsMessage(props) {
   } else if (props.correctAnswersCount / props.numberOfQuestions >= 0.8) {
     return (
       <article>
-        <h2>Congratulations, you did great!</h2>
+        <h2>Congratulations, you got a great score!</h2>
         <p className="strong">
           Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
         </p>
@@ -63,10 +63,10 @@ function ResultsMessage(props) {
           Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
         </p>
         <p>
-          Give yoursel a pat on the back, this was a tough one! But at least now
-          you know where your knowledge might be lacking so you can address the
-          blind spots. After you have done some research on the topic, we would
-          encourage you to try again!
+          Give yourself a pat on the back, this was a tough one! But at least
+          now you know where your knowledge might be lacking so you can address
+          the blind spots. After you have done some research, we would encourage
+          you to try again!
         </p>
         <p>
           If you would like to test your knowledge in other Amazing Online
