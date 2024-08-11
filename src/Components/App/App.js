@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../logo.svg";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -76,17 +75,18 @@ function App() {
     const root = document.getElementById("root");
     switch (gameStatus) {
       case "active":
-        root.style.backgroundImage = "url(./class.jpg)";
+        root.style.background =
+          "background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "1rem";
         break;
       case "finished":
-        root.style.backgroundImage = "url(./wooden-wall.jpg)";
+        //root.style.backgroundImage = "url(./wooden-wall.jpg)";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "5rem";
         break;
       default:
-        root.style.backgroundImage = "url(./disney.jpg)";
+        //root.style.backgroundImage = "url(./disney.jpg)";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "5rem";
         break;
