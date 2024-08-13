@@ -6,8 +6,6 @@ function QuizCard(props) {
 
   function handleClick(event) {
     const buttonClicked = event.target;
-    //console.log(typeof event.target);
-    //console.log(buttonClicked.textContent);
     if (buttonClicked.textContent === correctAnswer) {
       buttonClicked.classList.add("correct");
       document
@@ -22,7 +20,6 @@ function QuizCard(props) {
     }
 
     const answerButtons = document.getElementsByClassName("answerButton");
-    //console.log(answerButtons[0]);
     for (let i = 0; i < answerButtons.length; i++) {
       if (
         answerButtons[i].classList.contains("correct") ||

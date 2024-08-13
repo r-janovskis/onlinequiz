@@ -22,7 +22,6 @@ function App() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
   function startGame(quizTopic) {
-    //setQuestionSequence(() => Util.generateSequence());
     setQuizTopic(quizTopic);
     setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
     setGameStatus("active");
@@ -33,7 +32,6 @@ function App() {
     setIndex((prev) => prev + 1);
     document.getElementById("nextButton").style.display = "none";
     const answerButtons = document.getElementsByClassName("answerButton");
-    //console.log(answerButtons[0]);
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].disabled = false;
       answerButtons[i].classList.remove("correct", "incorrect");
@@ -41,9 +39,7 @@ function App() {
   }
 
   function endGame() {
-    //setQuizTopic("");
     setGameStatus("finished");
-    //setCorrectAnswers(0);
   }
 
   function backToStart() {
@@ -56,10 +52,7 @@ function App() {
     setCorrectAnswers((prev) => prev + 1);
   }
 
-  //const [questionAnswered, setQuestionAnswered] = useState(false);
-
   function answerQuestion() {
-    //setQuestionAnswered((prev) => (prev ? false : true));
     document.getElementById("nextButton").style.display = "block";
   }
 
@@ -75,18 +68,14 @@ function App() {
     const root = document.getElementById("root");
     switch (gameStatus) {
       case "active":
-        root.style.background =
-          "background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "1rem";
         break;
       case "finished":
-        //root.style.backgroundImage = "url(./wooden-wall.jpg)";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "5rem";
         break;
       default:
-        //root.style.backgroundImage = "url(./disney.jpg)";
         document.getElementsByClassName("container")[0].style.marginBottom =
           "5rem";
         break;

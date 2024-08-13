@@ -6,10 +6,6 @@ const Util = {
     let sequence = [];
 
     while (range.length > 0) {
-      //let value = Math.floor(Math.random() * range.length);
-      //if (sequence.indexOf(value) === -1) {
-      //  continue;
-      //}
       sequence.push(range.splice(Math.floor(Math.random() * range.length), 1));
     }
     return sequence;
@@ -45,14 +41,6 @@ const Util = {
     }
 
     let randomQuestionSequence = this.generateSequence(allQuizQuestions.length);
-    /*
-    while (array.length < numberOfQuestions) {
-      let index = Math.floor(Math.random() * allQuizQuestions.length);
-      if (array.indexOf(index) === -1) {
-        array.push(index);
-      }
-    }
-    */
 
     let index = 0;
     while (
@@ -74,7 +62,6 @@ const Util = {
 
       index++;
     }
-    //console.log(questions[0].question);
     return questions;
   },
 };
