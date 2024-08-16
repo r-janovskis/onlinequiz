@@ -56,6 +56,7 @@ function App() {
     document.getElementById("nextButton").style.display = "block";
   }
 
+  /*
   useEffect(() => {
     if (gameStatus === "active") {
       document.getElementsByClassName("container")[0].style.marginBottom =
@@ -81,7 +82,7 @@ function App() {
         break;
     }
   }, [gameStatus, quizTopic]);
-
+*/
   return (
     <div className="App">
       <Header />
