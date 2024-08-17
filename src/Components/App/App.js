@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 
 function App() {
   /*
-  We will use game Statuses:
+  We will use gameStatus values:
   - active -> quiz is being played
   - preparation -> start screen where rules are isplayed and we chose which game we play
   - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
@@ -56,33 +56,6 @@ function App() {
     document.getElementById("nextButton").style.display = "block";
   }
 
-  /*
-  useEffect(() => {
-    if (gameStatus === "active") {
-      document.getElementsByClassName("container")[0].style.marginBottom =
-        "1rem";
-    } else {
-      document.getElementsByClassName("container")[0].style.marginBottom =
-        "5rem";
-    }
-
-    const root = document.getElementById("root");
-    switch (gameStatus) {
-      case "active":
-        document.getElementsByClassName("container")[0].style.marginBottom =
-          "1rem";
-        break;
-      case "finished":
-        document.getElementsByClassName("container")[0].style.marginBottom =
-          "5rem";
-        break;
-      default:
-        document.getElementsByClassName("container")[0].style.marginBottom =
-          "5rem";
-        break;
-    }
-  }, [gameStatus, quizTopic]);
-*/
   return (
     <div className="App">
       <Header />
