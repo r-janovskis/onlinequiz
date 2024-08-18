@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.css";
-import q_mark from "../../Images/big_q.png";
 
 function Header(props) {
   return (

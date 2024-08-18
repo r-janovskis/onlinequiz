@@ -20,8 +20,8 @@ function Footer(props) {
         <div className="progressBar">{generateAnswerCubes()}</div>
       </footer>
     );
-    return null;
   }
+  return null;
 }
 
 export default Footer;
