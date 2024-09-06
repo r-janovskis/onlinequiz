@@ -4,6 +4,23 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Util from "../../Util/Util";
 import Footer from "../Footer/Footer";
+import Root from "../Root/Root";
+import Rules from "../Rules/Rules";
+
+import {
+  RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+
+const appRouter = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="/" element={<Rules />}></Route>
+    </Route>
+  )
+);
 
 function App() {
   /*
@@ -57,30 +74,31 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <Main
-        gameStatus={gameStatus}
-        onStartGame={startGame}
-        onNextQuestion={nextQuestion}
-        onEndGame={endGame}
-        index={index}
-        numberOfQuestions={numberOfQuestions}
-        question={questions[index]}
-        allQuestions={questions}
-        onAnswerQuestion={answerQuestion}
-        onCorrectAnswer={updateCorrectAnswerCount}
-        correctAnswersCount={correctAnswers}
-        quizTopic={quizTopic}
-        noBackToStart={backToStart}
-      />
+    <Root />
+    // <div className="App">
+    //   <Header />
+    //   <Main
+    //     gameStatus={gameStatus}
+    //     onStartGame={startGame}
+    //     onNextQuestion={nextQuestion}
+    //     onEndGame={endGame}
+    //     index={index}
+    //     numberOfQuestions={numberOfQuestions}
+    //     question={questions[index]}
+    //     allQuestions={questions}
+    //     onAnswerQuestion={answerQuestion}
+    //     onCorrectAnswer={updateCorrectAnswerCount}
+    //     correctAnswersCount={correctAnswers}
+    //     quizTopic={quizTopic}
+    //     noBackToStart={backToStart}
+    //   />
 
-      <Footer
-        index={index}
-        numberOfQuestions={numberOfQuestions}
-        gameStatus={gameStatus}
-      />
-    </div>
+    //   <Footer
+    //     index={index}
+    //     numberOfQuestions={numberOfQuestions}
+    //     gameStatus={gameStatus}
+    //   />
+    // </div>
   );
 }
 
