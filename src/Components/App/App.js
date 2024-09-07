@@ -6,6 +6,7 @@ import Util from "../../Util/Util";
 import Footer from "../Footer/Footer";
 import Root from "../Root/Root";
 import Rules from "../Rules/Rules";
+import Home from "../Home/Home";
 
 import {
   RouterProvider,
@@ -17,7 +18,8 @@ import {
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="/" element={<Rules />}></Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/rules" element={<Rules />} />
     </Route>
   )
 );
@@ -74,7 +76,7 @@ function App() {
   }
 
   return (
-    <Root />
+    <RouterProvider router={appRouter} />
     // <div className="App">
     //   <Header />
     //   <Main

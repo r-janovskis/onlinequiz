@@ -7,11 +7,11 @@ import { Outlet } from "react-router-dom";
 
 function Root() {
   return (
-    <>
+    <div className="App">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 }
 
