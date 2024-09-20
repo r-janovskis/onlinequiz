@@ -87,6 +87,10 @@ const Util = {
     }
     return questions;
   },
+
+  populateQuizOptions: () => {
+    return Object.keys(QuizQuestions);
+  },
 };
 
 export default Util;

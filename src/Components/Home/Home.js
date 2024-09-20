@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import QuizButton from "../QuizButton/QuizButton";
+import Util from "../../Util/Util";
+
 import "./Home.css";
-import QuizPicker from "../QuizPicker/QuizPicker";
 
 function Home(props) {
+  const [quizOptions, setQuizOptions] = useState(Util.populateQuizOptions());
+
+  const startGame = (event) => {
+    props.onStartGame(event.target.value);
+  };
+
   return (
     <main>
       <article className="container">
@@ -16,10 +24,18 @@ function Home(props) {
           everyone. Let’s get quizzing! Don't forget to check us out time to
           time, since new quizes are on the way!
         </p>
-        <QuizPicker startGame={props.onStartGame} />
+
+        <section className="quizChoices">
+          {quizOptions.map((option) => (
+            <QuizButton quizName={option} />
+          ))}
+        </section>
       </article>
     </main>
   );
 }
 
 export default Home;
+
+// Line 23
+// <QuizPicker onStartGame={props.onStartGame} />

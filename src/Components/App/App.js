@@ -18,7 +18,7 @@ import {
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home quizOptions />} />
       <Route path="/rules" element={<Rules />} />
     </Route>
   )
@@ -32,7 +32,8 @@ function App() {
   - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
   */
   const [gameStatus, setGameStatus] = useState("preparation");
-  const [quizTopic, setQuizTopic] = useState("");
+  // const [quizTopic, setQuizTopic] = useState("");
+
   const [questions, setQuestions] = useState([]);
 
   const [index, setIndex] = useState(null);
@@ -40,12 +41,12 @@ function App() {
   const [numberOfQuestions, setNumberOfQuestions] = useState(10);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  function startGame(quizTopic) {
-    setQuizTopic(quizTopic);
-    setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
-    setGameStatus("active");
-    setIndex(0);
-  }
+  // function startGame(quizTopic) {
+  //   setQuizTopic(quizTopic);
+  //   setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
+  //   setGameStatus("active");
+  //   setIndex(0);
+  // }
 
   function nextQuestion() {
     setIndex((prev) => prev + 1);
