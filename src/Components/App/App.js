@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import Root from "../Root/Root";
 import Rules from "../Rules/Rules";
 import Home from "../Home/Home";
+import Quiz from "../Quiz/Quiz";
 
 import {
   RouterProvider,
@@ -20,6 +21,7 @@ const appRouter = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route path="/" element={<Home quizOptions />} />
       <Route path="/rules" element={<Rules />} />
+      <Route path="/:quizTopic" element={<Quiz />} />
     </Route>
   )
 );
@@ -62,11 +64,11 @@ function App() {
     setGameStatus("finished");
   }
 
-  function backToStart() {
-    setQuizTopic("");
-    setGameStatus("preparation");
-    setCorrectAnswers(0);
-  }
+  // function backToStart() {
+  //   setQuizTopic("");
+  //   setGameStatus("preparation");
+  //   setCorrectAnswers(0);
+  // }
 
   function updateCorrectAnswerCount() {
     setCorrectAnswers((prev) => prev + 1);

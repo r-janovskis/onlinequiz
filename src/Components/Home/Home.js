@@ -4,12 +4,8 @@ import Util from "../../Util/Util";
 
 import "./Home.css";
 
-function Home(props) {
+function Home() {
   const [quizOptions, setQuizOptions] = useState(Util.populateQuizOptions());
-
-  const startGame = (event) => {
-    props.onStartGame(event.target.value);
-  };
 
   return (
     <main>
