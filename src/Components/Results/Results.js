@@ -9,6 +9,7 @@ import {
   quizTopic,
   correctAnswersCount,
   questions,
+  resetToInitialState,
 } from "../Quiz/QuizSlice";
 
 function Results(props) {
@@ -19,8 +20,10 @@ function Results(props) {
   const quizTitle = useSelector(quizTopic);
   const allQuestions = useSelector(questions);
 
+  const dispatch = useDispatch();
   function handleBackToHome() {
     navigate("/");
+    dispatch(resetToInitialState());
   }
 
   return (

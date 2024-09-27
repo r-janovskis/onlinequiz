@@ -34,6 +34,15 @@ const quizReducers = {
       correctAnswers: state.correctAnswers + 1,
     };
   },
+  resetToInitialState: (state) => {
+    return {
+      quizTopic: "",
+      questions: [],
+      index: 0,
+      questionCount: 0,
+      correctAnswers: 0,
+    };
+  },
 };
 
 const options = {
@@ -51,6 +60,7 @@ export const quizTopic = (state) => state.quiz.quizTopic;
 export const correctAnswersCount = (state) => state.quiz.correctAnswers;
 export const questionCount = (state) => state.quiz.questionCount;
 
-export const { answerCorrectly, nextQuestion, startQuiz } = quizSlice.actions;
+export const { answerCorrectly, nextQuestion, startQuiz, resetToInitialState } =
+  quizSlice.actions;
 
 export default quizSlice.reducer;
