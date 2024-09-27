@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import QuizButton from "../QuizButton/QuizButton";
+import { startQuiz } from "../Quiz/QuizSlice";
 import Util from "../../Util/Util";
 
 import "./Home.css";
@@ -22,8 +23,8 @@ function Home() {
         </p>
 
         <section className="quizChoices">
-          {quizOptions.map((option) => (
-            <QuizButton quizName={option} />
+          {quizOptions.map((option, index) => (
+            <QuizButton key={index} quizName={option} onStartGame={startQuiz} />
           ))}
         </section>
       </article>

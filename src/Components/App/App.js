@@ -8,6 +8,9 @@ import Root from "../Root/Root";
 import Rules from "../Rules/Rules";
 import Home from "../Home/Home";
 import Quiz from "../Quiz/Quiz";
+import QuizCard from "../QuizCard/QuizCard";
+import QuizStart from "../QuizStart/QuizStart";
+import Results from "../Results/Results";
 
 import {
   RouterProvider,
@@ -21,7 +24,8 @@ const appRouter = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route path="/" element={<Home quizOptions />} />
       <Route path="/rules" element={<Rules />} />
-      <Route path="/:quizTopic" element={<Quiz />} />
+      <Route path="/:quizTopic/results" element={<Results />} />
+      <Route path="/:quizTopic/:questionNumber" element={<Quiz />} />
     </Route>
   )
 );
@@ -33,15 +37,15 @@ function App() {
   - preparation -> start screen where rules are isplayed and we chose which game we play
   - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
   */
-  const [gameStatus, setGameStatus] = useState("preparation");
-  // const [quizTopic, setQuizTopic] = useState("");
+  // const [gameStatus, setGameStatus] = useState("preparation");
+  // // const [quizTopic, setQuizTopic] = useState("");
 
-  const [questions, setQuestions] = useState([]);
+  // const [questions, setQuestions] = useState([]);
 
-  const [index, setIndex] = useState(null);
+  // const [index, setIndex] = useState(null);
 
-  const [numberOfQuestions, setNumberOfQuestions] = useState(10);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  // const [numberOfQuestions, setNumberOfQuestions] = useState(10);
+  // const [correctAnswers, setCorrectAnswers] = useState(0);
 
   // function startGame(quizTopic) {
   //   setQuizTopic(quizTopic);
@@ -50,19 +54,19 @@ function App() {
   //   setIndex(0);
   // }
 
-  function nextQuestion() {
-    setIndex((prev) => prev + 1);
-    document.getElementById("nextButton").style.display = "none";
-    const answerButtons = document.getElementsByClassName("answerButton");
-    for (let i = 0; i < answerButtons.length; i++) {
-      answerButtons[i].disabled = false;
-      answerButtons[i].classList.remove("correct", "incorrect");
-    }
-  }
+  // function nextQuestion() {
+  //   setIndex((prev) => prev + 1);
+  //   document.getElementById("nextButton").style.display = "none";
+  //   const answerButtons = document.getElementsByClassName("answerButton");
+  //   for (let i = 0; i < answerButtons.length; i++) {
+  //     answerButtons[i].disabled = false;
+  //     answerButtons[i].classList.remove("correct", "incorrect");
+  //   }
+  // }
 
-  function endGame() {
-    setGameStatus("finished");
-  }
+  // function endGame() {
+  //   setGameStatus("finished");
+  // }
 
   // function backToStart() {
   //   setQuizTopic("");
@@ -70,9 +74,9 @@ function App() {
   //   setCorrectAnswers(0);
   // }
 
-  function updateCorrectAnswerCount() {
-    setCorrectAnswers((prev) => prev + 1);
-  }
+  // function updateCorrectAnswerCount() {
+  //   setCorrectAnswers((prev) => prev + 1);
+  // }
 
   function answerQuestion() {
     document.getElementById("nextButton").style.display = "block";
