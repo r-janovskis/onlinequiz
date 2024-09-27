@@ -22,7 +22,7 @@ import {
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="/" element={<Home quizOptions />} />
+      <Route path="/" element={<Home />} />
       <Route path="/rules" element={<Rules />} />
       <Route path="/:quizTopic/results" element={<Results />} />
       <Route path="/:quizTopic/:questionNumber" element={<Quiz />} />

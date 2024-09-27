@@ -12,7 +12,7 @@ import {
 import QuizCard from "../QuizCard/QuizCard";
 import "./Quiz.css";
 
-import { useParams, useNavigate, Outlet } from "react-router-dom";
+import { useParams, useNavigate, Outlet, Link } from "react-router-dom";
 
 function Quiz(props) {
   //const { quizTopic } = useParams();
@@ -133,37 +133,45 @@ function Quiz(props) {
     </div>
   );
   */
+  if (quizQuestions.length === 0 || !quizQuestions) {
+    return (
+      <article>
+        <h1> Woops, you reloded the page...</h1>
+        <Link to="/"> Go Home</Link>
+      </article>
+    );
+  } else {
+    return (
+      <article>
+        <h1>{quizTitle.charAt(0).toUpperCase() + quizTitle.slice(1)} Quiz</h1>
 
-  return (
-    <article>
-      <h1>{quizTitle.charAt(0).toUpperCase() + quizTitle.slice(1)} Quiz</h1>
-
-      <section className=" quizCard">
-        <p className="question">{quizQuestions[questionNumber].question}</p>
-        {quizQuestions[questionNumber].answers.map((answer, index) => {
-          if (answer.correct === true) {
-            correctAnswer = answer.answer;
-          }
-          return (
-            <button
-              key={`Q${index}`}
-              className="btn btn-outline-secondary answerButton"
-              onClick={handleSelectAnswer}
-            >
-              {answer.answer}
-            </button>
-          );
-        })}
-      </section>
-      <button
-        id="nextButton"
-        className="btn btn-lg mainButton"
-        onClick={handleClickNext}
-      >
-        Next
-      </button>
-    </article>
-  );
+        <section className=" quizCard">
+          <p className="question">{quizQuestions[questionNumber].question}</p>
+          {quizQuestions[questionNumber].answers.map((answer, index) => {
+            if (answer.correct === true) {
+              correctAnswer = answer.answer;
+            }
+            return (
+              <button
+                key={`Q${index}`}
+                className="btn btn-outline-secondary answerButton"
+                onClick={handleSelectAnswer}
+              >
+                {answer.answer}
+              </button>
+            );
+          })}
+        </section>
+        <button
+          id="nextButton"
+          className="btn btn-lg mainButton"
+          onClick={handleClickNext}
+        >
+          Next
+        </button>
+      </article>
+    );
+  }
 }
 
 export default Quiz;
