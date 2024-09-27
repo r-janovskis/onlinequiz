@@ -1,7 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { resetToInitialState } from "../Quiz/QuizSlice";
 import "./Rules.css";
 
-function Rules(props) {
+function Rules() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  function handleBackToHome() {
+    navigate("/");
+    dispatch(resetToInitialState());
+  }
+
   return (
     <article className="container">
       <h1>How to play</h1>
@@ -27,6 +37,10 @@ function Rules(props) {
         </li>
         <li>Best of luck & have fun!</li>
       </ol>
+
+      <button className="btn btn-lg mainButton" onClick={handleBackToHome}>
+        Back to Home
+      </button>
     </article>
   );
 }

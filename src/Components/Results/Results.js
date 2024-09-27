@@ -36,7 +36,7 @@ function Results(props) {
         numberOfQuestions={numberOfQuestions}
       />
       <button className="btn btn-lg mainButton" onClick={handleBackToHome}>
-        Back to Start
+        Back to Home
       </button>
       <section>
         <h2 className="section-header">Correct answers</h2>
