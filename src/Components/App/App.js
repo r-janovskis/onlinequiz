@@ -4,6 +4,31 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Util from "../../Util/Util";
 import Footer from "../Footer/Footer";
+import Root from "../Root/Root";
+import Rules from "../Rules/Rules";
+import Home from "../Home/Home";
+import Quiz from "../Quiz/Quiz";
+import QuizCard from "../QuizCard/QuizCard";
+import QuizStart from "../QuizStart/QuizStart";
+import Results from "../Results/Results";
+
+import {
+  RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+
+const appRouter = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/rules" element={<Rules />} />
+      <Route path="/:quizTopic/results" element={<Results />} />
+      <Route path="/:quizTopic/:questionNumber" element={<Quiz />} />
+    </Route>
+  )
+);
 
 function App() {
   /*
@@ -12,75 +37,77 @@ function App() {
   - preparation -> start screen where rules are isplayed and we chose which game we play
   - finished -> game is done, we are on results screen and can click through the cards to see our answer and correct ones if we answered incorrectly
   */
-  const [gameStatus, setGameStatus] = useState("preparation");
-  const [quizTopic, setQuizTopic] = useState("");
-  const [questions, setQuestions] = useState([]);
+  // const [gameStatus, setGameStatus] = useState("preparation");
+  // // const [quizTopic, setQuizTopic] = useState("");
 
-  const [index, setIndex] = useState(null);
+  // const [questions, setQuestions] = useState([]);
 
-  const [numberOfQuestions, setNumberOfQuestions] = useState(10);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  // const [index, setIndex] = useState(null);
 
-  function startGame(quizTopic) {
-    setQuizTopic(quizTopic);
-    setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
-    setGameStatus("active");
-    setIndex(0);
-  }
+  // const [numberOfQuestions, setNumberOfQuestions] = useState(10);
+  // const [correctAnswers, setCorrectAnswers] = useState(0);
 
-  function nextQuestion() {
-    setIndex((prev) => prev + 1);
-    document.getElementById("nextButton").style.display = "none";
-    const answerButtons = document.getElementsByClassName("answerButton");
-    for (let i = 0; i < answerButtons.length; i++) {
-      answerButtons[i].disabled = false;
-      answerButtons[i].classList.remove("correct", "incorrect");
-    }
-  }
+  // function startGame(quizTopic) {
+  //   setQuizTopic(quizTopic);
+  //   setQuestions(() => Util.generateQuiz(numberOfQuestions, quizTopic));
+  //   setGameStatus("active");
+  //   setIndex(0);
+  // }
 
-  function endGame() {
-    setGameStatus("finished");
-  }
+  // function nextQuestion() {
+  //   setIndex((prev) => prev + 1);
+  //   document.getElementById("nextButton").style.display = "none";
+  //   const answerButtons = document.getElementsByClassName("answerButton");
+  //   for (let i = 0; i < answerButtons.length; i++) {
+  //     answerButtons[i].disabled = false;
+  //     answerButtons[i].classList.remove("correct", "incorrect");
+  //   }
+  // }
 
-  function backToStart() {
-    setQuizTopic("");
-    setGameStatus("preparation");
-    setCorrectAnswers(0);
-  }
+  // function endGame() {
+  //   setGameStatus("finished");
+  // }
 
-  function updateCorrectAnswerCount() {
-    setCorrectAnswers((prev) => prev + 1);
-  }
+  // function backToStart() {
+  //   setQuizTopic("");
+  //   setGameStatus("preparation");
+  //   setCorrectAnswers(0);
+  // }
+
+  // function updateCorrectAnswerCount() {
+  //   setCorrectAnswers((prev) => prev + 1);
+  // }
 
   function answerQuestion() {
     document.getElementById("nextButton").style.display = "block";
   }
 
   return (
-    <div className="App">
-      <Header />
-      <Main
-        gameStatus={gameStatus}
-        onStartGame={startGame}
-        onNextQuestion={nextQuestion}
-        onEndGame={endGame}
-        index={index}
-        numberOfQuestions={numberOfQuestions}
-        question={questions[index]}
-        allQuestions={questions}
-        onAnswerQuestion={answerQuestion}
-        onCorrectAnswer={updateCorrectAnswerCount}
-        correctAnswersCount={correctAnswers}
-        quizTopic={quizTopic}
-        noBackToStart={backToStart}
-      />
+    <RouterProvider router={appRouter} />
+    // <div className="App">
+    //   <Header />
+    //   <Main
+    //     gameStatus={gameStatus}
+    //     onStartGame={startGame}
+    //     onNextQuestion={nextQuestion}
+    //     onEndGame={endGame}
+    //     index={index}
+    //     numberOfQuestions={numberOfQuestions}
+    //     question={questions[index]}
+    //     allQuestions={questions}
+    //     onAnswerQuestion={answerQuestion}
+    //     onCorrectAnswer={updateCorrectAnswerCount}
+    //     correctAnswersCount={correctAnswers}
+    //     quizTopic={quizTopic}
+    //     noBackToStart={backToStart}
+    //   />
 
-      <Footer
-        index={index}
-        numberOfQuestions={numberOfQuestions}
-        gameStatus={gameStatus}
-      />
-    </div>
+    //   <Footer
+    //     index={index}
+    //     numberOfQuestions={numberOfQuestions}
+    //     gameStatus={gameStatus}
+    //   />
+    // </div>
   );
 }
 

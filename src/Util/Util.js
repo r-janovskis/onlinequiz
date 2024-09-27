@@ -49,14 +49,14 @@ const Util = {
     let questions = [];
     let allQuizQuestions = [];
 
-    switch (quizName) {
-      case "Disney":
+    switch (quizName.toLowerCase()) {
+      case "disney":
         allQuizQuestions = QuizQuestions.disney;
         break;
-      case "Geography":
+      case "geography":
         allQuizQuestions = QuizQuestions.geography;
         break;
-      case "Sports":
+      case "sports":
         allQuizQuestions = QuizQuestions.sports;
         break;
       default:
@@ -86,6 +86,10 @@ const Util = {
       index++;
     }
     return questions;
+  },
+
+  populateQuizOptions: () => {
+    return Object.keys(QuizQuestions);
   },
 };
 
