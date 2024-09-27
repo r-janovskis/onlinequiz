@@ -84,7 +84,7 @@ function Quiz(props) {
     dispatch(nextQuestion());
     // const newIndex = useSelector(index);
     // console.log(`After dispatch: ${newIndex}, ${numberOfQuestions}`);
-
+    document.getElementById("nextButton").style.display = "none";
     // navigate(`/${quizTitle}/${newIndex + 1}`);
   }
 
