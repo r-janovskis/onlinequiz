@@ -22,7 +22,7 @@ function QuizButton(props) {
 
   return (
     <button
-      className="btn btn-lg mainButton"
+      className="btn btn-outline-info"
       value={props.quizName}
       onClick={startGame}
     >
