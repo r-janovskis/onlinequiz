@@ -19,20 +19,31 @@ p {
   font-family: "Mouse Memoirs", "Times New Roman", Times, serif;
 }
 
-.mainButton {
-  width: 50%;
-  font-weight: 700;
-  background-color: #382bf0;
-  margin: 1rem auto;
+.quizChoices {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-top: 2rem;
 }
 
-.mainButton:hover {
-  background-color: #7a5af5;
+.quizChoices button {
+  width: 40%;
 }
 
 @media only screen and (max-width: 450px) {
   .container {
     width: 90%;
     margin-bottom: 1rem;
+  }
+  .quizChoices {
+    flex-direction: column;
+  }
+
+  .quizChoices button {
+    width: 90%;
   }
 }

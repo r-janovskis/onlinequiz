@@ -1,17 +1,3 @@
-.quizChoices {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-
-  margin-top: 2rem;
-}
-
-.quizChoices button {
-  width: 40%;
-}
-
 ol {
   text-align: left;
 }
@@ -24,14 +10,5 @@ p {
 @media only screen and (max-width: 650px) {
   .intro {
     display: none;
-  }
-}
-@media only screen and (max-width: 450px) {
-  .quizChoices {
-    flex-direction: column;
-  }
-
-  .quizChoices button {
-    width: 90%;
   }
 }
