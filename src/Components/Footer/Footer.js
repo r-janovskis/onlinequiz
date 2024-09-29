@@ -17,7 +17,7 @@ function Footer(props) {
     }
     return answerCubesArray;
   };
-  if (quizTitle) {
+  if (quizTitle && currentQuestion < numberOfQuestions) {
     return (
       <footer>
         <p>
