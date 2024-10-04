@@ -2,7 +2,7 @@
   min-width: 40%;
   max-width: 90%;
   opacity: 0.95;
-  border: 3px solid #382bf0;
+  /* border: 3px solid #382bf0; */
   border-radius: 30px;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -20,7 +20,6 @@
 } */
 
 a {
-  clolor: blue;
   text-decoration: none;
 }
 
