@@ -3,6 +3,8 @@ import QuizButton from "../QuizButton/QuizButton";
 import { startQuiz } from "../Quiz/QuizSlice";
 import Util from "../../Util/Util";
 
+import { Link } from "react-router-dom";
+
 import "./Home.css";
 
 function Home() {
@@ -21,7 +23,11 @@ function Home() {
           everyone. Let’s get quizzing! Don't forget to check us out time to
           time, since new quizes are on the way!
         </p>
-
+        <p className="intro">
+          To learn how to play the game click the link below, or if you are
+          ready to start the quiz pick one of the topics.
+        </p>
+        <Link to="/rules">Quiz Rules</Link>
         <section className="quizChoices">
           {quizOptions.map((option, index) => (
             <QuizButton key={index} quizName={option} onStartGame={startQuiz} />
