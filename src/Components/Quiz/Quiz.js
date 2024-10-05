@@ -49,7 +49,10 @@ function Quiz(props) {
     const answerButtons = document.getElementsByClassName("answerButton");
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].classList.add("deactivated");
-      if (answerButtons[i].textContent === correctAnswer) {
+      if (
+        answerButtons[i].textContent === correctAnswer &&
+        !answerButtons[i].classList.contains("correct")
+      ) {
         answerButtons[i].classList.add("correctAfterAnswer");
       }
     }
