@@ -38,11 +38,11 @@ function Results(props) {
       <button className="btn btn-lg mainButton" onClick={handleBackToHome}>
         Back to Home
       </button>
-      <section>
+      {/* <section>
         <h2 className="section-header">Correct answers</h2>
         <QuizAnswers allQuestions={allQuestions} />
       </section>
-      <a href="#top">Back to Top</a>
+      <a href="#top">Back to Top</a> */}
     </article>
   );
 }
