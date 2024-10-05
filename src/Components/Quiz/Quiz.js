@@ -48,13 +48,10 @@ function Quiz(props) {
 
     const answerButtons = document.getElementsByClassName("answerButton");
     for (let i = 0; i < answerButtons.length; i++) {
-      if (
-        answerButtons[i].classList.contains("correct") ||
-        answerButtons[i].classList.contains("incorrect")
-      ) {
-        continue;
+      answerButtons[i].classList.add("deactivated");
+      if (answerButtons[i].textContent === correctAnswer) {
+        answerButtons[i].classList.add("correctAfterAnswer");
       }
-      answerButtons[i].disabled = true;
     }
 
     document.getElementById("nextButton").style.display = "block";
@@ -73,7 +70,9 @@ function Quiz(props) {
     for (let i = 0; i < answerButtons.length; i++) {
       answerButtons[i].classList.remove("correct");
       answerButtons[i].classList.remove("incorrect");
-      answerButtons[i].disabled = false;
+      answerButtons[i].classList.remove("correctAfterAnswer");
+      // answerButtons[i].disabled = false;
+      answerButtons[i].classList.remove("deactivated");
     }
 
     if (questionNumber + 1 === numberOfQuestions) {
@@ -154,7 +153,7 @@ function Quiz(props) {
             return (
               <button
                 key={`Q${index}`}
-                className="btn btn-outline-secondary answerButton"
+                className="btn btn-outline-dark answerButton"
                 onClick={handleSelectAnswer}
               >
                 {answer.answer}
