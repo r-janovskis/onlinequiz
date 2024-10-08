@@ -166,7 +166,7 @@ function Quiz(props) {
         </section>
         <button
           id="nextButton"
-          className="btn btn-lg mainButton"
+          className="btn btn-primary mainButton"
           onClick={handleClickNext}
         >
           Next

@@ -35,7 +35,7 @@ function Results(props) {
         correctAnswersCount={numberOfCorrectAnswers}
         numberOfQuestions={numberOfQuestions}
       />
-      <button className="btn btn-lg mainButton" onClick={handleBackToHome}>
+      <button className="btn btn-primary mainButton" onClick={handleBackToHome}>
         Back to Home
       </button>
       {/* <section>
