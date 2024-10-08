@@ -38,7 +38,7 @@ function Rules() {
         <li>Best of luck & have fun!</li>
       </ol>
 
-      <button className="btn btn-lg mainButton" onClick={handleBackToHome}>
+      <button className="btn btn-primary mainButton" onClick={handleBackToHome}>
         Back to Home
       </button>
     </article>

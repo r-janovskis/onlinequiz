@@ -51,14 +51,7 @@
 .mainButton {
   width: 50%;
   margin: 1rem auto;
-  /* font-weight: 700;
-  background-color: #382bf0;
-  margin: 1rem auto; */
 }
-
-/* .mainButton:hover {
-  background-color: #7a5af5;
-} */
 
 @media only screen and (max-width: 450px) {
   .mainButton {
