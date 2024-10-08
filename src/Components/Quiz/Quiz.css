@@ -42,8 +42,8 @@
 }
 
 .correctAfterAnswer {
-  font-weight: 500;
-  /* border-color: green; */
-  border: 3px solid green;
+  font-weight: 700;
   color: green;
+
+  border: 4px solid green;
 }
