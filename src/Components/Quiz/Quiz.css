@@ -1,3 +1,60 @@
 #nextButton {
   display: none;
 }
+
+.deactivated {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.quizCard {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.quizCard p {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.quizCard .btn {
+  font-size: 1.2rem;
+  /* border: 2px solid #7a5af5; */
+  margin-top: 0.5rem;
+  text-align: left;
+  margin: 0.5rem 1rem;
+}
+
+.correct {
+  background-color: green;
+  opacity: 0.8;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.incorrect {
+  background-color: red;
+  opacity: 0.8;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.correctAfterAnswer {
+  font-weight: 700;
+  color: green;
+
+  border: 4px solid green;
+}
+
+.mainButton {
+  width: 50%;
+  margin: 1rem auto;
+}
+
+@media only screen and (max-width: 450px) {
+  .mainButton {
+    width: 70%;
+  }
+}

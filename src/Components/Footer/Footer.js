@@ -1,7 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./Footer.css";
+import { index, quizTopic, questionCount } from "../Quiz/QuizSlice";
 
 function Footer(props) {
+  const currentQuestion = useSelector(index);
+  const quizTitle = useSelector(quizTopic);
+  const numberOfQuestions = useSelector(questionCount);
+
   const generateAnswerCubes = () => {
     let answerCubesArray = [];
     for (let i = 0; i < props.numberOfQuestions; i++) {
@@ -11,11 +17,11 @@ function Footer(props) {
     }
     return answerCubesArray;
   };
-  if (props.gameStatus === "active") {
+  if (quizTitle && currentQuestion < numberOfQuestions) {
     return (
       <footer>
         <p>
-          {props.index + 1}/{props.numberOfQuestions}
+          {currentQuestion + 1}/{numberOfQuestions}
         </p>
         <div className="progressBar">{generateAnswerCubes()}</div>
       </footer>

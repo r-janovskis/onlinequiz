@@ -1,0 +1,10 @@
+@media only screen and (max-width: 450px) {
+  .container {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .mainButton {
+    width: 70%;
+  }
+}
