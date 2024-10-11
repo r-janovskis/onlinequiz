@@ -7,7 +7,6 @@ import {
   questionCount,
   quizTopic,
   correctAnswersCount,
-  questions,
   resetToInitialState,
 } from "../Quiz/QuizSlice";
 
