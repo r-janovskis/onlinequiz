@@ -8,22 +8,12 @@ function Footer(props) {
   const quizTitle = useSelector(quizTopic);
   const numberOfQuestions = useSelector(questionCount);
 
-  const generateAnswerCubes = () => {
-    let answerCubesArray = [];
-    for (let i = 0; i < props.numberOfQuestions; i++) {
-      answerCubesArray.push(
-        <div className="answerCube" key={`answerCube${i}`}></div>
-      );
-    }
-    return answerCubesArray;
-  };
   if (quizTitle && currentQuestion < numberOfQuestions) {
     return (
       <footer>
         <p>
           {currentQuestion + 1}/{numberOfQuestions}
         </p>
-        <div className="progressBar">{generateAnswerCubes()}</div>
       </footer>
     );
   }
