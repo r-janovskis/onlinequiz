@@ -1,6 +1,5 @@
 import React from "react";
 import ResultsMessage from "../ResultsMessage/ResultsMessage";
-import QuizAnswers from "../QuizAnswers/QuizAnswers";
 import "./Results.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
