@@ -1,6 +1,5 @@
 import React from "react";
 import ResultsMessage from "../ResultsMessage/ResultsMessage";
-import QuizAnswers from "../QuizAnswers/QuizAnswers";
 import "./Results.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,13 +11,12 @@ import {
   resetToInitialState,
 } from "../Quiz/QuizSlice";
 
-function Results(props) {
+function Results() {
   const navigate = useNavigate();
 
   const numberOfCorrectAnswers = useSelector(correctAnswersCount);
   const numberOfQuestions = useSelector(questionCount);
   const quizTitle = useSelector(quizTopic);
-  const allQuestions = useSelector(questions);
 
   const dispatch = useDispatch();
   function handleBackToHome() {
@@ -38,11 +36,6 @@ function Results(props) {
       <button className="btn btn-primary mainButton" onClick={handleBackToHome}>
         Back to Home
       </button>
-      {/* <section>
-        <h2 className="section-header">Correct answers</h2>
-        <QuizAnswers allQuestions={allQuestions} />
-      </section>
-      <a href="#top">Back to Top</a> */}
     </article>
   );
 }
