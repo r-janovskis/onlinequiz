@@ -42,6 +42,3 @@ function Home() {
 }
 
 export default Home;
-
-// Line 23
-// <QuizPicker onStartGame={props.onStartGame} />
