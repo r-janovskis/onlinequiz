@@ -6,48 +6,9 @@ footer {
   padding-bottom: 1rem;
 }
 
-.progressBar {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  width: 50%;
-  gap: 1rem;
-  height: 1.5rem;
-}
-
 footer p {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   text-align: center;
-}
-
-.answerCube {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border: 3px solid black;
-}
-
-.correctCube {
-  background-color: green;
-}
-
-.incorrectCube {
-  background-color: red;
-}
-
-@media only screen and (max-width: 850px) {
-  .progressBar {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .progressBar {
-    width: 70%;
-    height: 4rem;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
 }
