@@ -11,9 +11,9 @@ import {
 } from "../Quiz/QuizSlice";
 import "./Quiz.css";
 
-import { useParams, useNavigate, Outlet, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-function Quiz(props) {
+function Quiz() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const quizQuestions = useSelector(questions);
@@ -42,15 +42,8 @@ function Quiz(props) {
         answerButtons[i].classList.add("correctAfterAnswer");
       }
     }
-
     document.getElementById("nextButton").style.display = "block";
   }
-
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-
-  const goHome = () => {
-    navigate("/");
-  };
 
   function handleClickNext() {
     // Remove the answered style
@@ -62,6 +55,7 @@ function Quiz(props) {
       answerButtons[i].classList.remove("deactivated");
     }
 
+    //console.log(`${questionNumber}`);
     if (questionNumber + 1 === numberOfQuestions) {
       navigate(`/${quizTitle}/results`);
     }

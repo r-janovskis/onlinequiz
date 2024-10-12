@@ -7,7 +7,11 @@ function ResultsMessage(props) {
       <article>
         <h2 className="section-header">Unbelievable, you're a guru!</h2>
         <p className="strong">
-          Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
+          Your score:{" "}
+          {Math.round(
+            (props.correctAnswersCount / props.numberOfQuestions) * 100
+          )}
+          %
         </p>
         <p>
           You have a flawless knowledge about the topic! Now you can cofidently
@@ -24,7 +28,11 @@ function ResultsMessage(props) {
       <article>
         <h2>Congratulations, you got a great score!</h2>
         <p className="strong">
-          Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
+          Your score:{" "}
+          {Math.round(
+            (props.correctAnswersCount / props.numberOfQuestions) * 100
+          )}
+          %
         </p>
         <p>
           You have a good knowledge about the topic, but there is still some
@@ -42,7 +50,11 @@ function ResultsMessage(props) {
       <article>
         <h2>Well done, you did pretty good!</h2>
         <p className="strong">
-          Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
+          Your score:{" "}
+          {Math.round(
+            (props.correctAnswersCount / props.numberOfQuestions) * 100
+          )}
+          %
         </p>
         <p>
           You have a decent knowledge about the topic, but there is plenty of
@@ -60,7 +72,11 @@ function ResultsMessage(props) {
       <article>
         <h2>Ohh boy, that didn't go as planned, ehh?!</h2>
         <p className="strong">
-          Your score: {props.correctAnswersCount}/{props.numberOfQuestions}
+          Your score:{" "}
+          {Math.round(
+            (props.correctAnswersCount / props.numberOfQuestions) * 100
+          )}
+          %
         </p>
         <p>
           Give yourself a pat on the back, this was a tough one! But at least
