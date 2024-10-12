@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, applyMiddleware } from "@reduxjs/toolkit";
 
 import Util from "../../Util/Util";
 

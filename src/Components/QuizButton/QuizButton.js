@@ -1,18 +1,20 @@
 import React from "react";
 import "./QuizButton.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { startQuiz } from "../Quiz/QuizSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { questionCount, quizTopic, startQuiz } from "../Quiz/QuizSlice";
 
 function QuizButton(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const startGame = (event) => {
+    const numberOfQuestions = Number(
+      document.getElementById("displayNumberOfQuestions").innerHTML
+    );
     dispatch(
       startQuiz({
         quizTopic: event.target.value,
-        questionCount: 10,
-        quizTopic: event.target.value,
+        questionCount: numberOfQuestions,
       })
     );
     navigate(`/${event.target.value}/1`);

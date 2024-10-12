@@ -5,7 +5,6 @@ function NumberOfQuestionsPicker() {
   const handleChange = (event) => {
     document.getElementById("displayNumberOfQuestions").innerHTML =
       event.target.value;
-    console.log(event.target.value);
   };
 
   useEffect(() => {
