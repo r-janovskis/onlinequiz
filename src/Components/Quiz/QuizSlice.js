@@ -1,4 +1,4 @@
-import { createSlice, applyMiddleware } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import Util from "../../Util/Util";
 
@@ -9,6 +9,34 @@ const initialQuizState = {
   questionCount: 0,
   correctAnswers: 0,
 };
+
+export const fetchQuestions = createAsyncThunk(
+  "quiz/fetchQuestions",
+  async (quizParameters) => {
+    const { quizId, numberOfQuestions } = quizParameters;
+    console.log("Starting to fetch questions");
+    console.log(
+      `Quiz ID: ${quizId} | Number of questions requested: ${numberOfQuestions}`
+    );
+    const data = await fetch(
+      `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${quizId}`
+    );
+
+    if (!data.ok) {
+      console.log("Data missing");
+    }
+
+    const json = await data.json();
+
+    //console.log(json);
+
+    for (const questionObject of json.results) {
+      console.log(questionObject.question);
+      Util.formatAnswers(questionObject);
+    }
+    return json;
+  }
+);
 
 const quizReducers = {
   nextQuestion: (state) => {
@@ -49,6 +77,11 @@ const options = {
   name: "quiz",
   initialState: initialQuizState,
   reducers: quizReducers,
+  extraReducers: (builder) => {
+    builder.addCase(fetchQuestions.fulfilled, (state, action) => {
+      state.questions = action.payload;
+    });
+  },
 };
 
 export const quizSlice = createSlice(options);

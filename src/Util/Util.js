@@ -24,18 +24,28 @@ const Util = {
    * input array and adding it to the output array. The input array is
    * modified in place, while the output array is a new array.
    *
-   * @param {array} answers - The array of answers to be randomized.
+   * @param {Object} questionObject - Question object that contain question and all the answers
    * @return {array} A new array with the answers in a random order.
    */
-  randomizeAnswers(answers) {
-    const newAnswers = [];
+  formatAnswers(questionObject) {
+    const answerArray = [];
 
-    while (answers.length > 0) {
-      newAnswers.push(
-        answers.splice(Math.floor(Math.random() * answers.length), 1)
-      );
+    // Format and add correct answer
+    answerArray.push({
+      answer: questionObject.correct_answer,
+      correct: true,
+    });
+
+    // Add all the incorrect answers
+    for (let answer of questionObject.incorrect_answers) {
+      answerArray.push({
+        answer: answer,
+        correct: false,
+      });
     }
-    return newAnswers;
+
+    console.log(answerArray);
+    return answerArray;
   },
 
   /**
