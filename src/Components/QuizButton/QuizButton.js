@@ -2,7 +2,12 @@ import React from "react";
 import "./QuizButton.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { questionCount, quizTopic, startQuiz } from "../Quiz/QuizSlice";
+import {
+  questionCount,
+  quizTopic,
+  startQuiz,
+  fetchQuestions,
+} from "../Quiz/QuizSlice";
 
 function QuizButton(props) {
   const dispatch = useDispatch();
@@ -12,7 +17,7 @@ function QuizButton(props) {
       document.getElementById("displayNumberOfQuestions").innerHTML
     );
     dispatch(
-      startQuiz({
+      fetchQuestions({
         quizTopic: event.target.value,
         questionCount: numberOfQuestions,
       })

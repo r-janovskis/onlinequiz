@@ -1,6 +1,16 @@
 import QuizQuestions from "./QuizQuestions";
 
 const Util = {
+  QUIZ_TOPICS: [
+    "General Knowledge",
+    "Sport",
+    "Book",
+    "Geography",
+    "Animal",
+    "Mathematic",
+    "Science & Nature",
+  ],
+
   /**
    * Generates a random sequence of numbers from 0 to size - 1.
    *
@@ -55,7 +65,7 @@ const Util = {
    * @param {string} quizName - The category of the quiz (e.g., "Disney", "Geography", "Sports").
    * @return {array} An array of quiz questions with randomized answers.
    */
-  generateQuiz(numberOfQuestions, quizName) {
+  generateQuiz(numberOfQuestions, quizName = "", quizQuestionSet = []) {
     let questions = [];
     let allQuizQuestions = [];
 
@@ -70,6 +80,7 @@ const Util = {
         allQuizQuestions = QuizQuestions.sports;
         break;
       default:
+        allQuizQuestions = quizQuestionSet;
         break;
     }
 
@@ -99,7 +110,7 @@ const Util = {
   },
 
   populateQuizOptions: () => {
-    return Object.keys(QuizQuestions);
+    return Util.QUIZ_TOPICS;
   },
 };
 

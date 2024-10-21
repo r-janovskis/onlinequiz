@@ -13,13 +13,39 @@ const initialQuizState = {
 export const fetchQuestions = createAsyncThunk(
   "quiz/fetchQuestions",
   async (quizParameters) => {
-    const { quizId, numberOfQuestions } = quizParameters;
+    const { quizTopic, questionCount } = quizParameters;
+
+    // Select right quizID
+    let quizId = 0;
+    switch (quizTopic) {
+      case "Sport":
+        quizId = 21;
+        break;
+      case "Geography":
+        quizId = 22;
+        break;
+      case "Animals":
+        quizId = 27;
+        break;
+      case "Mathematics":
+        quizId = 19;
+        break;
+      case "Science & Nature":
+        quizId = 17;
+        break;
+      case "Books":
+        quizId = 10;
+        break;
+      default:
+        quizId = 9;
+        break;
+    }
     console.log("Starting to fetch questions");
     console.log(
-      `Quiz ID: ${quizId} | Number of questions requested: ${numberOfQuestions}`
+      `Quiz ID: ${quizId} | Number of questions requested: ${questionCount}`
     );
     const data = await fetch(
-      `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${quizId}`
+      `https://opentdb.com/api.php?amount=${questionCount}&category=${quizId}`
     );
 
     if (!data.ok) {
@@ -29,12 +55,24 @@ export const fetchQuestions = createAsyncThunk(
     const json = await data.json();
 
     //console.log(json);
+    const setOfQuestions = [];
 
     for (const questionObject of json.results) {
-      console.log(questionObject.question);
-      Util.formatAnswers(questionObject);
+      const newQuestion = {
+        question: questionObject.question,
+        answers: Util.formatAnswers(questionObject),
+      };
+
+      // console.log(questionObject.question);
+      // Util.formatAnswers(questionObject);
+      setOfQuestions.push(newQuestion);
     }
-    return json;
+
+    return {
+      quizTopic: quizTopic,
+      questions: setOfQuestions,
+      questionCount: questionCount,
+    };
   }
 );
 
@@ -79,7 +117,16 @@ const options = {
   reducers: quizReducers,
   extraReducers: (builder) => {
     builder.addCase(fetchQuestions.fulfilled, (state, action) => {
-      state.questions = action.payload;
+      return {
+        ...state,
+        quizTopic: action.payload.quizTopic,
+        questionCount: action.payload.questionCount,
+        questions: Util.generateQuiz(
+          action.payload.questionCount,
+          "",
+          action.payload.questions
+        ),
+      };
     });
   },
 };
