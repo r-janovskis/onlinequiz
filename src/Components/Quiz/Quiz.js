@@ -8,6 +8,8 @@ import {
   index,
   quizTopic,
   questionCount,
+  isLoading,
+  hasError,
 } from "../Quiz/QuizSlice";
 import "./Quiz.css";
 
@@ -20,6 +22,8 @@ function Quiz() {
   const questionNumber = useSelector(index);
   const quizTitle = useSelector(quizTopic);
   const numberOfQuestions = useSelector(questionCount);
+  const loading = useSelector(isLoading);
+  const error = useSelector(hasError);
 
   let correctAnswer;
 
@@ -71,6 +75,13 @@ function Quiz() {
   }, [questionNumber]);
 
   if (quizQuestions.length === 0 || !quizQuestions) {
+    if (loading) {
+      return (
+        <article>
+          <h1>Loading...</h1>
+        </article>
+      );
+    }
     return (
       <article>
         <h1> Woops, you reloded the page...</h1>

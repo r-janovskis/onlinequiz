@@ -8,6 +8,8 @@ const initialQuizState = {
   index: 0,
   questionCount: 0,
   correctAnswers: 0,
+  isLoading: false,
+  hasError: false,
 };
 
 export const fetchQuestions = createAsyncThunk(
@@ -116,16 +118,32 @@ const options = {
   initialState: initialQuizState,
   reducers: quizReducers,
   extraReducers: (builder) => {
+    builder.addCase(fetchQuestions.pending, (state) => {
+      return {
+        ...state,
+        isLoading: true,
+        hasError: false,
+      };
+    });
     builder.addCase(fetchQuestions.fulfilled, (state, action) => {
       return {
         ...state,
         quizTopic: action.payload.quizTopic,
         questionCount: action.payload.questionCount,
+        isLoading: false,
+        hasError: false,
         questions: Util.generateQuiz(
           action.payload.questionCount,
           "",
           action.payload.questions
         ),
+      };
+    });
+    builder.addCase(fetchQuestions.rejected, (state) => {
+      return {
+        ...state,
+        isLoading: false,
+        hasError: true,
       };
     });
   },
@@ -139,6 +157,8 @@ export const index = (state) => state.quiz.index;
 export const quizTopic = (state) => state.quiz.quizTopic;
 export const correctAnswersCount = (state) => state.quiz.correctAnswers;
 export const questionCount = (state) => state.quiz.questionCount;
+export const isLoading = (state) => state.quiz.isLoading;
+export const hasError = (state) => state.quiz.hasError;
 
 export const { answerCorrectly, nextQuestion, startQuiz, resetToInitialState } =
   quizSlice.actions;
