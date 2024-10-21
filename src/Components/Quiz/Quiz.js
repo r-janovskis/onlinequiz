@@ -77,47 +77,64 @@ function Quiz() {
   if (quizQuestions.length === 0 || !quizQuestions) {
     if (loading) {
       return (
-        <article>
-          <h1>Loading...</h1>
-        </article>
+        <main>
+          <article>
+            <h1>Loading...</h1>
+            <div class="pl">
+              <div class="pl__outer-ring"></div>
+              <div class="pl__inner-ring"></div>
+              <div class="pl__track-cover"></div>
+              <div class="pl__ball">
+                <div class="pl__ball-texture"></div>
+                <div class="pl__ball-outer-shadow"></div>
+                <div class="pl__ball-inner-shadow"></div>
+                <div class="pl__ball-side-shadows"></div>
+              </div>
+            </div>
+          </article>
+        </main>
       );
     }
     return (
-      <article>
-        <h1> Woops, you reloded the page...</h1>
-        <Link to="/"> Go Home</Link>
-      </article>
+      <main>
+        <article>
+          <h1> Woops, you reloded the page...</h1>
+          <Link to="/"> Go Home</Link>
+        </article>
+      </main>
     );
   } else {
     return (
-      <article>
-        <h1>{quizTitle.charAt(0).toUpperCase() + quizTitle.slice(1)} Quiz</h1>
+      <main>
+        <article>
+          <h1>{quizTitle.charAt(0).toUpperCase() + quizTitle.slice(1)} Quiz</h1>
 
-        <section className=" quizCard">
-          <p className="question">{quizQuestions[questionNumber].question}</p>
-          {quizQuestions[questionNumber].answers.map((answer, index) => {
-            if (answer.correct === true) {
-              correctAnswer = answer.answer;
-            }
-            return (
-              <button
-                key={`Q${index}`}
-                className="btn btn-outline-dark answerButton"
-                onClick={handleSelectAnswer}
-              >
-                {answer.answer}
-              </button>
-            );
-          })}
-        </section>
-        <button
-          id="nextButton"
-          className="btn btn-primary mainButton"
-          onClick={handleClickNext}
-        >
-          Next
-        </button>
-      </article>
+          <section className=" quizCard">
+            <p className="question">{quizQuestions[questionNumber].question}</p>
+            {quizQuestions[questionNumber].answers.map((answer, index) => {
+              if (answer.correct === true) {
+                correctAnswer = answer.answer;
+              }
+              return (
+                <button
+                  key={`Q${index}`}
+                  className="btn btn-outline-dark answerButton"
+                  onClick={handleSelectAnswer}
+                >
+                  {answer.answer}
+                </button>
+              );
+            })}
+          </section>
+          <button
+            id="nextButton"
+            className="btn btn-primary mainButton"
+            onClick={handleClickNext}
+          >
+            Next
+          </button>
+        </article>
+      </main>
     );
   }
 }
