@@ -26,7 +26,7 @@ export const fetchQuestions = createAsyncThunk(
       case "Geography":
         quizId = 22;
         break;
-      case "Animals":
+      case "Animal":
         quizId = 27;
         break;
       case "Mathematics":
@@ -35,7 +35,7 @@ export const fetchQuestions = createAsyncThunk(
       case "Science & Nature":
         quizId = 17;
         break;
-      case "Books":
+      case "Book":
         quizId = 10;
         break;
       default:
@@ -60,8 +60,11 @@ export const fetchQuestions = createAsyncThunk(
     const setOfQuestions = [];
 
     for (const questionObject of json.results) {
+      // let question = questionObject.question.replace("&#039;", "'");
+      // question = question.replace("&rsquo;", "'");
+      // question = question.replace("&lsquo;", "'");
       const newQuestion = {
-        question: questionObject.question,
+        question: Util.cleanUpText(questionObject.question),
         answers: Util.formatAnswers(questionObject),
       };
 

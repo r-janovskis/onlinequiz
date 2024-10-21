@@ -7,7 +7,7 @@ const Util = {
     "Book",
     "Geography",
     "Animal",
-    "Mathematic",
+    "Mathematics",
     "Science & Nature",
   ],
 
@@ -27,6 +27,19 @@ const Util = {
     return sequence;
   },
 
+  cleanUpText(text) {
+    let newText = text.replaceAll("&#039;", "'");
+    newText = newText.replaceAll("&rsquo;", "'");
+    newText = newText.replaceAll("&lsquo;", "'");
+    newText = newText.replaceAll("&quot;", "'");
+    newText = newText.replaceAll("&amp;", "&");
+    newText = newText.replaceAll("&lrm;", "");
+    newText = newText.replaceAll("&ouml;", "ö");
+    newText = newText.replaceAll("&ocirc;", "ô");
+    newText = newText.replaceAll("&Eacute;", "É");
+    return newText;
+  },
+
   /**
    * Randomizes the order of the given answers for a question.
    *
@@ -42,14 +55,14 @@ const Util = {
 
     // Format and add correct answer
     answerArray.push({
-      answer: questionObject.correct_answer,
+      answer: Util.cleanUpText(questionObject.correct_answer),
       correct: true,
     });
 
     // Add all the incorrect answers
     for (let answer of questionObject.incorrect_answers) {
       answerArray.push({
-        answer: answer,
+        answer: Util.cleanUpText(answer),
         correct: false,
       });
     }
