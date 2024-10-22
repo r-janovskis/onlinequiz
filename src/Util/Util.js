@@ -1,5 +1,3 @@
-import QuizQuestions from "./QuizQuestions";
-
 const Util = {
   QUIZ_TOPICS: [
     "General Knowledge",
@@ -37,6 +35,10 @@ const Util = {
     newText = newText.replaceAll("&ouml;", "ö");
     newText = newText.replaceAll("&ocirc;", "ô");
     newText = newText.replaceAll("&Eacute;", "É");
+    newText = newText.replaceAll("&sup2;", "^2");
+    newText = newText.replaceAll("&sup3;", "^3");
+    newText = newText.replaceAll("&deg;", "°");
+    newText = newText.replaceAll("&pi;", "π");
     return newText;
   },
 

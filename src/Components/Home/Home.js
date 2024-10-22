@@ -3,8 +3,6 @@ import QuizButton from "../QuizButton/QuizButton";
 import NumberOfQuestionsPicker from "../NumberOfQuestionsPicker/NumberOfQuestionsPicker";
 import { startQuiz } from "../Quiz/QuizSlice";
 import Util from "../../Util/Util";
-import { fetchQuestions } from "../Quiz/QuizSlice";
-import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 
@@ -12,18 +10,6 @@ import "./Home.css";
 
 function Home() {
   const [quizOptions, setQuizOptions] = useState(Util.populateQuizOptions());
-
-  const dispatch = useDispatch();
-  const testSportQuiz = () => {
-    dispatch(
-      fetchQuestions({
-        quizId: 21,
-        numberOfQuestions: Number(
-          document.getElementById("displayNumberOfQuestions").innerHTML
-        ),
-      })
-    );
-  };
 
   return (
     <main>

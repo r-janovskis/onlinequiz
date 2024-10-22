@@ -1,4 +1,3 @@
-import Util from "../../Util/Util";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,13 +8,12 @@ import {
   quizTopic,
   questionCount,
   isLoading,
-  hasError,
 } from "../Quiz/QuizSlice";
 import "./Quiz.css";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import ErrorScreen from "../ErrorScreen/ErrorScreen";
 
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Quiz() {
   const navigate = useNavigate();
@@ -25,7 +23,6 @@ function Quiz() {
   const quizTitle = useSelector(quizTopic);
   const numberOfQuestions = useSelector(questionCount);
   const loading = useSelector(isLoading);
-  const error = useSelector(hasError);
 
   let correctAnswer;
 
