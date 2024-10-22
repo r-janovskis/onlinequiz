@@ -41,14 +41,13 @@ const Util = {
   },
 
   /**
-   * Randomizes the order of the given answers for a question.
+   * Formats a question object's correct and incorrect answers into a standard
+   * answer format.
    *
-   * This function works by repeatedly removing a random element from the
-   * input array and adding it to the output array. The input array is
-   * modified in place, while the output array is a new array.
-   *
-   * @param {Object} questionObject - Question object that contain question and all the answers
-   * @return {array} A new array with the answers in a random order.
+   * @param {object} questionObject - A question object with a correct answer and
+   * an array of incorrect answers.
+   * @return {array} An array of answer objects with a correct answer and
+   * incorrect answers.
    */
   formatAnswers(questionObject) {
     const answerArray = [];
@@ -67,7 +66,6 @@ const Util = {
       });
     }
 
-    console.log(answerArray);
     return answerArray;
   },
 
@@ -78,33 +76,33 @@ const Util = {
    * @param {string} quizName - The category of the quiz (e.g., "Disney", "Geography", "Sports").
    * @return {array} An array of quiz questions with randomized answers.
    */
-  generateQuiz(numberOfQuestions, quizName = "", quizQuestionSet = []) {
+  generateQuiz(numberOfQuestions, quizQuestionSet = []) {
     let questions = [];
-    let allQuizQuestions = [];
+    // let allQuizQuestions = [];
 
-    switch (quizName.toLowerCase()) {
-      case "disney":
-        allQuizQuestions = QuizQuestions.disney;
-        break;
-      case "geography":
-        allQuizQuestions = QuizQuestions.geography;
-        break;
-      case "sports":
-        allQuizQuestions = QuizQuestions.sports;
-        break;
-      default:
-        allQuizQuestions = quizQuestionSet;
-        break;
-    }
+    // switch (quizName.toLowerCase()) {
+    //   case "disney":
+    //     allQuizQuestions = QuizQuestions.disney;
+    //     break;
+    //   case "geography":
+    //     allQuizQuestions = QuizQuestions.geography;
+    //     break;
+    //   case "sports":
+    //     allQuizQuestions = QuizQuestions.sports;
+    //     break;
+    //   default:
+    //     allQuizQuestions = quizQuestionSet;
+    //     break;
+    // }
 
-    let randomQuestionSequence = this.generateSequence(allQuizQuestions.length);
+    let randomQuestionSequence = this.generateSequence(quizQuestionSet.length);
 
     let index = 0;
     while (
       questions.length < numberOfQuestions &&
       randomQuestionSequence.length > 0
     ) {
-      questions.push(allQuizQuestions[randomQuestionSequence.shift()]);
+      questions.push(quizQuestionSet[randomQuestionSequence.shift()]);
 
       //randomize answers
       let sequenceOfAnswers = this.generateSequence(

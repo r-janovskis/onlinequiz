@@ -1,5 +1,5 @@
 import Util from "../../Util/Util";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   answerCorrectly,
@@ -12,6 +12,7 @@ import {
   hasError,
 } from "../Quiz/QuizSlice";
 import "./Quiz.css";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 import { useNavigate, Link } from "react-router-dom";
 
@@ -76,24 +77,7 @@ function Quiz() {
 
   if (quizQuestions.length === 0 || !quizQuestions) {
     if (loading) {
-      return (
-        <main>
-          <article>
-            <h1>Loading...</h1>
-            <div class="pl">
-              <div class="pl__outer-ring"></div>
-              <div class="pl__inner-ring"></div>
-              <div class="pl__track-cover"></div>
-              <div class="pl__ball">
-                <div class="pl__ball-texture"></div>
-                <div class="pl__ball-outer-shadow"></div>
-                <div class="pl__ball-inner-shadow"></div>
-                <div class="pl__ball-side-shadows"></div>
-              </div>
-            </div>
-          </article>
-        </main>
-      );
+      return <LoadingScreen></LoadingScreen>;
     }
     return (
       <main>

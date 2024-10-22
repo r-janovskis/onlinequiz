@@ -13,24 +13,6 @@ import "./Home.css";
 function Home() {
   const [quizOptions, setQuizOptions] = useState(Util.populateQuizOptions());
 
-  // const testSportQuiz = async () => {
-  //   console.log("Starting to fetch questions");
-  //   const data = await fetch(
-  //     "https://opentdb.com/api.php?amount=10&category=21"
-  //   );
-
-  //   if (!data.ok) {
-  //     console.log("Data missing");
-  //   }
-
-  //   const json = await data.json();
-
-  //   for (const questionObject of json.results) {
-  //     console.log(questionObject.question);
-  //     Util.formatAnswers(questionObject);
-  //   }
-  // };
-
   const dispatch = useDispatch();
   const testSportQuiz = () => {
     dispatch(
@@ -70,8 +52,6 @@ function Home() {
             <QuizButton key={index} quizName={option} onStartGame={startQuiz} />
           ))}
         </section>
-
-        <button onClick={testSportQuiz}>Test Sport Quiz</button>
       </article>
     </main>
   );

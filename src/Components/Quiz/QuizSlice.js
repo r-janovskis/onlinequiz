@@ -42,10 +42,7 @@ export const fetchQuestions = createAsyncThunk(
         quizId = 9;
         break;
     }
-    console.log("Starting to fetch questions");
-    console.log(
-      `Quiz ID: ${quizId} | Number of questions requested: ${questionCount}`
-    );
+
     const data = await fetch(
       `https://opentdb.com/api.php?amount=${questionCount}&category=${quizId}`
     );
@@ -56,20 +53,14 @@ export const fetchQuestions = createAsyncThunk(
 
     const json = await data.json();
 
-    //console.log(json);
     const setOfQuestions = [];
 
     for (const questionObject of json.results) {
-      // let question = questionObject.question.replace("&#039;", "'");
-      // question = question.replace("&rsquo;", "'");
-      // question = question.replace("&lsquo;", "'");
       const newQuestion = {
         question: Util.cleanUpText(questionObject.question),
         answers: Util.formatAnswers(questionObject),
       };
 
-      // console.log(questionObject.question);
-      // Util.formatAnswers(questionObject);
       setOfQuestions.push(newQuestion);
     }
 
@@ -86,17 +77,6 @@ const quizReducers = {
     return {
       ...state,
       index: state.index + 1,
-    };
-  },
-  startQuiz: (state, action) => {
-    return {
-      ...state,
-      quizTopic: action.payload.quizTopic,
-      questionCount: action.payload.questionCount,
-      questions: Util.generateQuiz(
-        action.payload.questionCount,
-        action.payload.quizTopic
-      ),
     };
   },
   answerCorrectly: (state) => {
@@ -137,7 +117,6 @@ const options = {
         hasError: false,
         questions: Util.generateQuiz(
           action.payload.questionCount,
-          "",
           action.payload.questions
         ),
       };
