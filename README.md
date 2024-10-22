@@ -22,7 +22,13 @@ For creating this project I used some other available resources.
 - Questions are pulled from open database using API calls from [Open Trivia DB](https://opentdb.com/)
 - Animation for Load screen sourced from [Free Frontend webpage](https://freefrontend.com/css-loaders/)
 
-## How to run it
+## Depolyment
+
+This online quiz is deployed using surge. To find out more about it please visit [their website](https://surge.sh/)
+
+To see deployed click on the following link for [Amazing Online Quiz](https://rjanovskis-quiz.surge.sh/) and I hope you will have a great time playing the game!
+
+## How to run it locally
 
 To run this quiz game locally follow the steps below:
 
