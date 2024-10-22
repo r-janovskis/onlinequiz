@@ -13,6 +13,7 @@ import {
 } from "../Quiz/QuizSlice";
 import "./Quiz.css";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import ErrorScreen from "../ErrorScreen/ErrorScreen";
 
 import { useNavigate, Link } from "react-router-dom";
 
@@ -79,14 +80,7 @@ function Quiz() {
     if (loading) {
       return <LoadingScreen></LoadingScreen>;
     }
-    return (
-      <main>
-        <article>
-          <h1> Woops, you reloded the page...</h1>
-          <Link to="/"> Go Home</Link>
-        </article>
-      </main>
-    );
+    return <ErrorScreen></ErrorScreen>;
   } else {
     return (
       <main>
