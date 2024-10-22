@@ -13,6 +13,14 @@ In creating this quiz I used several available tools:
 3. **Google Fonts** to add a bit of style to the heading
 4. **CSS** for overall styling of the game and responsivenes based on the screen size
 5. **HTML** to structure elements that are visible
+   1
+
+## Other Resources used in the project
+
+For creating this project I used some other available resources.
+
+- Questions are pulled from open database using API calls from [Open Trivia DB](https://opentdb.com/)
+- Animation for Load screen sourced from [Free Frontend webpage](https://freefrontend.com/css-loaders/)
 
 ## How to run it
 
