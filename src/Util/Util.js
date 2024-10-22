@@ -1,6 +1,14 @@
-import QuizQuestions from "./QuizQuestions";
-
 const Util = {
+  QUIZ_TOPICS: [
+    "General Knowledge",
+    "Sport",
+    "Book",
+    "Geography",
+    "Animal",
+    "Mathematics",
+    "Science & Nature",
+  ],
+
   /**
    * Generates a random sequence of numbers from 0 to size - 1.
    *
@@ -17,25 +25,50 @@ const Util = {
     return sequence;
   },
 
-  /**
-   * Randomizes the order of the given answers for a question.
-   *
-   * This function works by repeatedly removing a random element from the
-   * input array and adding it to the output array. The input array is
-   * modified in place, while the output array is a new array.
-   *
-   * @param {array} answers - The array of answers to be randomized.
-   * @return {array} A new array with the answers in a random order.
-   */
-  randomizeAnswers(answers) {
-    const newAnswers = [];
+  cleanUpText(text) {
+    let newText = text.replaceAll("&#039;", "'");
+    newText = newText.replaceAll("&rsquo;", "'");
+    newText = newText.replaceAll("&lsquo;", "'");
+    newText = newText.replaceAll("&quot;", "'");
+    newText = newText.replaceAll("&amp;", "&");
+    newText = newText.replaceAll("&lrm;", "");
+    newText = newText.replaceAll("&ouml;", "ö");
+    newText = newText.replaceAll("&ocirc;", "ô");
+    newText = newText.replaceAll("&Eacute;", "É");
+    newText = newText.replaceAll("&sup2;", "^2");
+    newText = newText.replaceAll("&sup3;", "^3");
+    newText = newText.replaceAll("&deg;", "°");
+    newText = newText.replaceAll("&pi;", "π");
+    return newText;
+  },
 
-    while (answers.length > 0) {
-      newAnswers.push(
-        answers.splice(Math.floor(Math.random() * answers.length), 1)
-      );
+  /**
+   * Formats a question object's correct and incorrect answers into a standard
+   * answer format.
+   *
+   * @param {object} questionObject - A question object with a correct answer and
+   * an array of incorrect answers.
+   * @return {array} An array of answer objects with a correct answer and
+   * incorrect answers.
+   */
+  formatAnswers(questionObject) {
+    const answerArray = [];
+
+    // Format and add correct answer
+    answerArray.push({
+      answer: Util.cleanUpText(questionObject.correct_answer),
+      correct: true,
+    });
+
+    // Add all the incorrect answers
+    for (let answer of questionObject.incorrect_answers) {
+      answerArray.push({
+        answer: Util.cleanUpText(answer),
+        correct: false,
+      });
     }
-    return newAnswers;
+
+    return answerArray;
   },
 
   /**
@@ -45,32 +78,33 @@ const Util = {
    * @param {string} quizName - The category of the quiz (e.g., "Disney", "Geography", "Sports").
    * @return {array} An array of quiz questions with randomized answers.
    */
-  generateQuiz(numberOfQuestions, quizName) {
+  generateQuiz(numberOfQuestions, quizQuestionSet = []) {
     let questions = [];
-    let allQuizQuestions = [];
+    // let allQuizQuestions = [];
 
-    switch (quizName.toLowerCase()) {
-      case "disney":
-        allQuizQuestions = QuizQuestions.disney;
-        break;
-      case "geography":
-        allQuizQuestions = QuizQuestions.geography;
-        break;
-      case "sports":
-        allQuizQuestions = QuizQuestions.sports;
-        break;
-      default:
-        break;
-    }
+    // switch (quizName.toLowerCase()) {
+    //   case "disney":
+    //     allQuizQuestions = QuizQuestions.disney;
+    //     break;
+    //   case "geography":
+    //     allQuizQuestions = QuizQuestions.geography;
+    //     break;
+    //   case "sports":
+    //     allQuizQuestions = QuizQuestions.sports;
+    //     break;
+    //   default:
+    //     allQuizQuestions = quizQuestionSet;
+    //     break;
+    // }
 
-    let randomQuestionSequence = this.generateSequence(allQuizQuestions.length);
+    let randomQuestionSequence = this.generateSequence(quizQuestionSet.length);
 
     let index = 0;
     while (
       questions.length < numberOfQuestions &&
       randomQuestionSequence.length > 0
     ) {
-      questions.push(allQuizQuestions[randomQuestionSequence.shift()]);
+      questions.push(quizQuestionSet[randomQuestionSequence.shift()]);
 
       //randomize answers
       let sequenceOfAnswers = this.generateSequence(
@@ -89,7 +123,7 @@ const Util = {
   },
 
   populateQuizOptions: () => {
-    return Object.keys(QuizQuestions);
+    return Util.QUIZ_TOPICS;
   },
 };
 
