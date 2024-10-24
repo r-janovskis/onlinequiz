@@ -39,6 +39,20 @@ const Util = {
     newText = newText.replaceAll("&sup3;", "^3");
     newText = newText.replaceAll("&deg;", "°");
     newText = newText.replaceAll("&pi;", "π");
+    newText = newText.replaceAll("&hellip;", "...");
+    newText = newText.replaceAll("&ldquo;", "“");
+    newText = newText.replaceAll("&rdquo;", "”");
+    newText = newText.replaceAll("&mdash;", "—");
+    newText = newText.replaceAll("&ndash;", "–");
+    newText = newText.replaceAll("&bull;", "•");
+    newText = newText.replaceAll("&copy;", "©");
+    newText = newText.replaceAll("&reg;", "®");
+    newText = newText.replaceAll("&trade;", "TM");
+    newText = newText.replaceAll("&times;", "×");
+    newText = newText.replaceAll("&divide;", "÷");
+    newText = newText.replaceAll("&lt;", "<");
+    newText = newText.replaceAll("&gt;", ">");
+
     return newText;
   },
 

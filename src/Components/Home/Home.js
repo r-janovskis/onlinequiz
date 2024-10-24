@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import QuizButton from "../QuizButton/QuizButton";
 import NumberOfQuestionsPicker from "../NumberOfQuestionsPicker/NumberOfQuestionsPicker";
+import DifficultyPicker from "../DifficultyPicker/DifficultyPicker";
 import { startQuiz } from "../Quiz/QuizSlice";
 import Util from "../../Util/Util";
 
@@ -32,7 +33,10 @@ function Home() {
           ready to start the quiz pick one of the topics.
         </p>
         <Link to="/rules">Quiz Rules</Link>
-        <NumberOfQuestionsPicker />
+        <div className="customizeQuiz">
+          <NumberOfQuestionsPicker />
+          <DifficultyPicker />
+        </div>
         <section className="quizChoices">
           {quizOptions.map((option, index) => (
             <QuizButton key={index} quizName={option} onStartGame={startQuiz} />

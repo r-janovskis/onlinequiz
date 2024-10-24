@@ -17,8 +17,8 @@ function Rules() {
       <h1>How to play</h1>
       <ol>
         <li>
-          To start a game, select a topic by clicking one of the buttons below.
-          questions. Each quiz will contain 10 questions.
+          To start a game, choose number of questions you want to answer, select
+          the dificutly of questions and click on one of the topics.
         </li>
         <li>
           Questions will be presented one by one with no chance to go back to
