@@ -43,8 +43,23 @@ export const fetchQuestions = createAsyncThunk(
         break;
     }
 
+    let dificultyOption = "";
+    switch (document.getElementById("dificulty").value) {
+      case "easy":
+        dificultyOption = "&difficulty=easy";
+        break;
+      case "medium":
+        dificultyOption = "&difficulty=medium";
+        break;
+      case "hard":
+        dificultyOption = "&difficulty=hard";
+        break;
+      default:
+        break;
+    }
+
     const data = await fetch(
-      `https://opentdb.com/api.php?amount=${questionCount}&category=${quizId}`
+      `https://opentdb.com/api.php?amount=${questionCount}&category=${quizId}${dificultyOption}`
     );
 
     if (!data.ok) {
