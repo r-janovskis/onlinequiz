@@ -57,7 +57,6 @@ export const fetchQuestions = createAsyncThunk(
       default:
         break;
     }
-
     const data = await fetch(
       `https://opentdb.com/api.php?amount=${questionCount}&category=${quizId}${dificultyOption}`
     );

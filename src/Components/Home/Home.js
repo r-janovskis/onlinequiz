@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QuizButton from "../QuizButton/QuizButton";
 import NumberOfQuestionsPicker from "../NumberOfQuestionsPicker/NumberOfQuestionsPicker";
-import DificultyPicker from "../DificultyPicker/DificultyPicker";
+import DifficultyPicker from "../DifficultyPicker/DifficultyPicker";
 import { startQuiz } from "../Quiz/QuizSlice";
 import Util from "../../Util/Util";
 
@@ -35,7 +35,7 @@ function Home() {
         <Link to="/rules">Quiz Rules</Link>
         <div className="customizeQuiz">
           <NumberOfQuestionsPicker />
-          <DificultyPicker />
+          <DifficultyPicker />
         </div>
         <section className="quizChoices">
           {quizOptions.map((option, index) => (
