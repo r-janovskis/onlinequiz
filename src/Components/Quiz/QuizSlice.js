@@ -44,7 +44,7 @@ export const fetchQuestions = createAsyncThunk(
     }
 
     let dificultyOption = "";
-    switch (document.getElementById("dificulty").value) {
+    switch (document.getElementById("difficulty").value) {
       case "easy":
         dificultyOption = "&difficulty=easy";
         break;

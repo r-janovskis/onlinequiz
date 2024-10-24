@@ -6,7 +6,7 @@ function ErrorScreen() {
   return (
     <main>
       <article>
-        <h1> Woops, you reloded the page...</h1>
+        <h1> Woops, something went wrong...</h1>
         <Link to="/"> Go Home</Link>
       </article>
     </main>

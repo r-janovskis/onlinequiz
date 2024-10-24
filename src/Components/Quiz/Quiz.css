@@ -26,18 +26,26 @@
   margin: 0.5rem 1rem;
 }
 
-.correct {
-  background-color: green;
+.correct,
+.incorrect {
+  color: white;
   opacity: 0.8;
   font-weight: 700;
   pointer-events: none;
 }
 
+.correct {
+  background-color: green;
+  /* opacity: 0.8;
+  font-weight: 700;
+  pointer-events: none; */
+}
+
 .incorrect {
   background-color: red;
-  opacity: 0.8;
+  /* opacity: 0.8;
   font-weight: 700;
-  pointer-events: none;
+  pointer-events: none; */
 }
 
 .correctAfterAnswer {
