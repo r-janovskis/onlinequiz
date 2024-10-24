@@ -95,6 +95,7 @@ function Quiz() {
                   key={`Q${index}`}
                   className="btn btn-outline-dark answerButton"
                   onClick={handleSelectAnswer}
+                  onTouchEnd={handleSelectAnswer}
                 >
                   {answer.answer}
                 </button>
