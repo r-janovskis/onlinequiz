@@ -15,7 +15,7 @@ function Home() {
   return (
     <main>
       <article className="container">
-        <h1>Welcome To The Amazing Online Quizes!</h1>
+        <h1>Welcome!</h1>
         <p>
           Ready to test your knowledge and have some fun? Dive into our exciting
           quizzes covering some specific topics, from pop culture to science,
