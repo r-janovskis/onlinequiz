@@ -4,7 +4,7 @@ import "./Header.css";
 function Header() {
   return (
     <header>
-      <h1>The Amazing Online Quizes!</h1>
+      <h1>The Amazing Online Quizzes!</h1>
     </header>
   );
 }
