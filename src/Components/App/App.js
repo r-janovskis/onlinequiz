@@ -12,12 +12,14 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import ErrorScreen from "../ErrorScreen/ErrorScreen";
 
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route path="/" element={<Home />} />
       <Route path="/rules" element={<Rules />} />
+      <Route path="/error" element={<ErrorScreen />} />
       <Route path="/:quizTopic/results" element={<Results />} />
       <Route path="/:quizTopic/:questionNumber" element={<Quiz />} />
     </Route>

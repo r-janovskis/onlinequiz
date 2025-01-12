@@ -58,7 +58,6 @@ function Quiz() {
       answerButtons[i].classList.remove("deactivated");
     }
 
-    //console.log(`${questionNumber}`);
     if (questionNumber + 1 === numberOfQuestions) {
       navigate(`/${quizTitle}/results`);
     }
@@ -68,7 +67,9 @@ function Quiz() {
   }
 
   useEffect(() => {
-    if (questionNumber < numberOfQuestions) {
+    if (questionNumber === 0 && loading === false) {
+      navigate(`/error`);
+    } else if (questionNumber < numberOfQuestions) {
       navigate(`/${quizTitle}/${questionNumber + 1}`);
     }
   }, [questionNumber]);
@@ -77,7 +78,6 @@ function Quiz() {
     if (loading) {
       return <LoadingScreen></LoadingScreen>;
     }
-    return <ErrorScreen></ErrorScreen>;
   } else {
     return (
       <main>
